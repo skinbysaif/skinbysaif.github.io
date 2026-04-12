@@ -3,24 +3,32 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Skin by Saif Clinic | Sheffield Skin Clinic</title>
-  <meta name="description" content="Skin by Saif Clinic is a private Sheffield skin clinic offering advanced facials, microneedling, hydrafacial, dermaplaning and personalised skin consultations." />
+
+  <title>Skin by Saif Clinic | Microneedling, Facials & Skin Clinic in Sheffield</title>
+  <meta name="description" content="Private Sheffield skin clinic offering microneedling, hydrafacial, dermaplaning and personalised skin consultations for acne, texture, pigmentation and skin confidence." />
+  <meta name="robots" content="index, follow" />
+
+  <meta property="og:title" content="Skin by Saif Clinic | Sheffield Skin Clinic" />
+  <meta property="og:description" content="Microneedling, hydrafacial, dermaplaning and personalised skin consultations in Sheffield." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="logo.jpg" />
+
   <style>
     :root{
-      --bg:#fcfaf7;
-      --bg-soft:#f4efe8;
+      --bg:#fbf8f4;
+      --bg-soft:#f2ebe3;
       --surface:#ffffff;
-      --surface-soft:#f8f4ee;
-      --text:#282320;
-      --muted:#6d635c;
-      --accent:#b28a57;
-      --accent-dark:#8e6c42;
-      --line:rgba(178,138,87,.18);
-      --line-soft:rgba(40,35,32,.08);
-      --shadow:0 10px 28px rgba(30,24,20,.06);
-      --radius:20px;
-      --radius-lg:28px;
-      --max:1160px;
+      --surface-soft:#f7f1ea;
+      --text:#241f1c;
+      --muted:#6c625b;
+      --accent:#aa7f4b;
+      --accent-dark:#86633a;
+      --line:rgba(170,127,75,.16);
+      --line-soft:rgba(36,31,28,.07);
+      --shadow:0 12px 30px rgba(20,16,12,.055);
+      --radius:18px;
+      --radius-lg:26px;
+      --max:1140px;
     }
 
     *{box-sizing:border-box}
@@ -31,7 +39,7 @@
       color:var(--text);
       background:
         radial-gradient(circle at top left, #fffdf9 0%, transparent 28%),
-        linear-gradient(180deg, #fcfaf7 0%, #f5efe8 100%);
+        linear-gradient(180deg, var(--bg) 0%, var(--bg-soft) 100%);
       line-height:1.65;
       -webkit-font-smoothing:antialiased;
       text-rendering:optimizeLegibility;
@@ -45,17 +53,17 @@
       position:sticky;
       top:0;
       z-index:100;
-      backdrop-filter:blur(14px);
-      background:rgba(252,250,247,.86);
-      border-bottom:1px solid var(--line-soft);
+      background:rgba(251,248,244,.94);
+      border-bottom:1px solid rgba(0,0,0,.06);
+      backdrop-filter:saturate(140%) blur(10px);
     }
 
     .nav{
       display:flex;
       align-items:center;
       justify-content:space-between;
-      gap:18px;
-      padding:16px 0;
+      gap:24px;
+      padding:14px 0;
     }
 
     .brand{
@@ -66,12 +74,13 @@
     }
 
     .brand img{
-      width:44px;
-      height:44px;
+      width:42px;
+      height:42px;
       border-radius:50%;
       object-fit:cover;
+      border:1px solid rgba(0,0,0,.07);
       background:#fff;
-      border:1px solid var(--line-soft);
+      flex-shrink:0;
     }
 
     .brand-text{
@@ -79,44 +88,45 @@
     }
 
     .brand-title{
-      font-weight:700;
-      letter-spacing:.01em;
+      font-weight:600;
       font-size:15px;
+      letter-spacing:.01em;
     }
 
     .brand-sub{
       color:var(--muted);
-      font-size:11px;
+      font-size:10px;
+      letter-spacing:.14em;
       text-transform:uppercase;
-      letter-spacing:.12em;
-      margin-top:2px;
+      margin-top:3px;
     }
 
     .nav-links{
       display:flex;
       align-items:center;
-      gap:20px;
+      gap:18px;
       flex-wrap:wrap;
+      font-size:13px;
       color:var(--muted);
-      font-size:14px;
     }
 
     .nav-links a{
+      padding:4px 0;
       transition:.2s ease;
     }
 
     .nav-links a:hover{
-      color:var(--accent-dark);
+      color:var(--text);
     }
 
     .hero{
-      padding:54px 0 28px;
+      padding:54px 0 30px;
     }
 
     .hero-wrap{
       display:grid;
-      grid-template-columns:1.05fr .95fr;
-      gap:34px;
+      grid-template-columns:1.03fr .97fr;
+      gap:36px;
       align-items:center;
     }
 
@@ -147,8 +157,8 @@
     }
 
     h1{
-      font-size:clamp(40px, 6vw, 72px);
-      line-height:1.02;
+      font-size:clamp(40px, 6vw, 70px);
+      line-height:1.03;
       margin:0 0 16px;
       max-width:11ch;
     }
@@ -173,6 +183,7 @@
       display:inline-flex;
       align-items:center;
       justify-content:center;
+      gap:10px;
       min-height:50px;
       padding:0 20px;
       border-radius:999px;
@@ -187,9 +198,9 @@
     }
 
     .btn-primary{
-      background:linear-gradient(180deg, #bb9462, #a67d49);
+      background:linear-gradient(180deg, #b98c57, #9d7343);
       color:#fff;
-      box-shadow:0 10px 22px rgba(166,125,73,.22);
+      box-shadow:0 10px 22px rgba(157,115,67,.22);
     }
 
     .btn-secondary{
@@ -206,13 +217,13 @@
       display:grid;
       grid-template-columns:repeat(3, minmax(0,1fr));
       gap:14px;
-      max-width:700px;
+      max-width:720px;
     }
 
     .point{
-      background:rgba(255,255,255,.7);
+      background:rgba(255,255,255,.78);
       border:1px solid var(--line-soft);
-      border-radius:18px;
+      border-radius:16px;
       padding:16px 14px;
       box-shadow:var(--shadow);
       text-align:center;
@@ -251,11 +262,11 @@
       position:absolute;
       left:18px;
       bottom:18px;
-      background:rgba(255,255,255,.92);
+      background:rgba(255,255,255,.94);
       border:1px solid var(--line-soft);
       color:var(--text);
       padding:12px 14px;
-      border-radius:16px;
+      border-radius:14px;
       box-shadow:var(--shadow);
       font-size:14px;
     }
@@ -265,7 +276,7 @@
     }
 
     .section-sm{
-      padding:44px 0;
+      padding:46px 0;
     }
 
     .section-center{
@@ -299,20 +310,12 @@
     .split{
       display:grid;
       grid-template-columns:1fr 1fr;
-      gap:34px;
+      gap:36px;
       align-items:center;
     }
 
-    .panel-soft{
-      background:rgba(255,255,255,.62);
-      border:1px solid var(--line-soft);
-      border-radius:24px;
-      padding:28px;
-      box-shadow:var(--shadow);
-    }
-
     .photo{
-      border-radius:24px;
+      border-radius:22px;
       overflow:hidden;
       background:#fff;
       border:1px solid var(--line-soft);
@@ -338,19 +341,21 @@
 
     .founder-grid{
       display:grid;
-      grid-template-columns:.82fr 1.18fr;
-      gap:40px;
+      grid-template-columns:.75fr 1.25fr;
+      gap:42px;
       align-items:center;
     }
 
     .portrait-wrap{
       display:flex;
       justify-content:center;
+      align-items:center;
     }
 
     .portrait-photo{
-      width:min(100%, 360px);
-      border-radius:26px;
+      width:min(100%, 290px);
+      margin:0 auto;
+      border-radius:22px;
       overflow:hidden;
       background:#fff;
       border:1px solid var(--line-soft);
@@ -359,7 +364,7 @@
 
     .portrait-photo img{
       width:100%;
-      height:430px;
+      height:340px;
       object-fit:cover;
       object-position:center top;
     }
@@ -389,7 +394,7 @@
     .service{
       background:#fff;
       border:1px solid var(--line-soft);
-      border-radius:20px;
+      border-radius:18px;
       padding:22px;
       box-shadow:var(--shadow);
       text-align:left;
@@ -447,7 +452,7 @@
     .why-card{
       background:#fff;
       border:1px solid var(--line-soft);
-      border-radius:20px;
+      border-radius:18px;
       padding:24px;
       box-shadow:var(--shadow);
       text-align:left;
@@ -467,7 +472,7 @@
     .results-grid{
       display:grid;
       grid-template-columns:1fr 1fr;
-      gap:28px;
+      gap:30px;
       align-items:center;
     }
 
@@ -529,7 +534,7 @@
     .offer-card{
       background:#fff;
       border:1px solid var(--line-soft);
-      border-radius:20px;
+      border-radius:18px;
       padding:26px;
       box-shadow:var(--shadow);
       text-align:center;
@@ -568,7 +573,7 @@
     details{
       background:#fff;
       border:1px solid var(--line-soft);
-      border-radius:18px;
+      border-radius:16px;
       padding:18px 20px;
       box-shadow:var(--shadow);
     }
@@ -597,7 +602,7 @@
     .contact-panel{
       background:#fff;
       border:1px solid var(--line-soft);
-      border-radius:22px;
+      border-radius:20px;
       padding:28px;
       box-shadow:var(--shadow);
     }
@@ -677,22 +682,31 @@
       }
 
       .portrait-photo{
-        width:min(100%, 420px);
+        width:min(100%, 260px);
       }
 
       .portrait-photo img{
-        height:400px;
+        height:300px;
       }
     }
 
     @media (max-width: 760px){
       .nav{
         flex-direction:column;
-        align-items:flex-start;
+        align-items:center;
+        text-align:center;
+      }
+
+      .brand{
+        justify-content:center;
+      }
+
+      .brand-text{
+        text-align:center;
       }
 
       .nav-links{
-        justify-content:flex-start;
+        justify-content:center;
       }
 
       .hero{
@@ -709,12 +723,39 @@
         align-items:flex-start;
       }
 
-      .cta-row{
+      .cta-row,
+      .hero-copy .cta-row,
+      .contact-panel.center .cta-row{
         justify-content:center;
       }
 
-      .hero-copy .cta-row{
-        justify-content:flex-start;
+      .hero-copy{
+        text-align:center;
+      }
+
+      .hero-copy .lead{
+        margin-left:auto;
+        margin-right:auto;
+      }
+
+      .hero-points{
+        margin-left:auto;
+        margin-right:auto;
+      }
+
+      .eyebrow{
+        margin-left:auto;
+        margin-right:auto;
+      }
+
+      .gold-line.left{
+        margin-left:auto;
+        margin-right:auto;
+      }
+
+      .about-copy,
+      .founder-copy{
+        text-align:center;
       }
     }
   </style>
@@ -749,7 +790,7 @@
         <div class="eyebrow">Advanced facials • Personalised care • By appointment</div>
         <h1>Advanced skin treatments in a calm, private Sheffield clinic.</h1>
         <p class="lead">
-          Skin by Saif Clinic offers thoughtful, results-focused treatments for acne, congestion, dehydration, pigmentation and texture — with a personal approach shaped by real experience of difficult skin.
+          Skin by Saif Clinic is a private skin clinic in Sheffield offering advanced facial treatments including microneedling, hydrafacial and personalised skincare consultations for acne, congestion, texture, pigmentation and long-term skin confidence.
         </p>
 
         <div class="cta-row">
@@ -797,7 +838,7 @@
           Skin by Saif Clinic is a private Sheffield-based skin clinic offering advanced facials, microneedling, hydrafacial, dermaplaning and personalised skin consultations in a calm, carefully designed setting.
         </p>
         <p>
-          The clinic is built around thoughtful care, clean professional standards and treatments that are tailored to the person in front of you — not rushed, generic protocols. Whether your main concern is acne, congestion, dehydration, texture, pigmentation or overall skin confidence, every appointment is designed with real skin goals in mind.
+          The clinic is built around thoughtful care, clean professional standards and treatments tailored to the person in front of you — not rushed, generic protocols. Whether your main concern is acne, congestion, dehydration, texture, pigmentation or overall skin confidence, every appointment is designed around real skin goals.
         </p>
       </div>
 
