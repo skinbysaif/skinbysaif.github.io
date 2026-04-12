@@ -339,13 +339,15 @@
     }
 
     .about-copy p,
-    .founder-copy p{
+    .founder-copy p,
+    .location-copy p{
       margin:0 0 16px;
       color:var(--muted);
     }
 
     .about-copy p:last-child,
-    .founder-copy p:last-child{
+    .founder-copy p:last-child,
+    .location-copy p:last-child{
       margin-bottom:0;
     }
 
@@ -410,6 +412,11 @@
       text-align:left;
     }
 
+    .service.featured{
+      border:1px solid rgba(170,127,75,.28);
+      box-shadow:0 18px 40px rgba(157,115,67,.09);
+    }
+
     .service-top{
       display:flex;
       align-items:flex-start;
@@ -433,6 +440,12 @@
       color:var(--accent-dark);
       font-size:13px;
       font-weight:700;
+    }
+
+    .pill.featured{
+      background:linear-gradient(180deg, #b98c57, #9d7343);
+      color:#fff;
+      border:none;
     }
 
     .service p{
@@ -655,6 +668,31 @@
       flex-shrink:0;
     }
 
+    .tc-box{
+      background:#fff;
+      border:1px solid var(--line-soft);
+      border-radius:20px;
+      padding:28px;
+      box-shadow:var(--shadow);
+      margin-top:28px;
+      text-align:left;
+    }
+
+    .tc-box h3{
+      margin:0 0 14px;
+      font-size:26px;
+    }
+
+    .tc-box p{
+      margin:0 0 14px;
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    .tc-box p:last-child{
+      margin-bottom:0;
+    }
+
     .footer{
       padding:34px 0 48px;
       text-align:center;
@@ -769,7 +807,8 @@
       }
 
       .about-copy,
-      .founder-copy{
+      .founder-copy,
+      .location-copy{
         text-align:center;
       }
     }
@@ -799,6 +838,7 @@
         <a href="#clinic">Clinic</a>
         <a href="#faq">FAQs</a>
         <a href="#contact">Contact</a>
+        <a href="#terms">Terms</a>
       </div>
     </div>
   </div>
@@ -830,8 +870,8 @@
             <span>From £70 to £90 depending on treatment level</span>
           </div>
           <div class="point">
-            <strong>Hydrafacial</strong>
-            <span>Deep cleanse, hydration, LED and skin glow</span>
+            <strong>Ultimate Facial</strong>
+            <span>Hydrafacial + microneedling in one premium treatment</span>
           </div>
           <div class="point">
             <strong>Personalised consultations</strong>
@@ -928,12 +968,28 @@
       </p>
 
       <div class="services">
+        <div class="service featured">
+          <div class="service-top">
+            <h3>Ultimate Skin Rejuvenation Facial</h3>
+            <div class="pill featured">£130</div>
+          </div>
+          <p>
+            A premium 90-minute treatment combining Hydrafacial and microneedling for the ultimate skin refresh. Your appointment includes a free initial consultation, deep cleanse, exfoliation, extractions where suitable, hydration infusion, microneedling and finishing aftercare tailored to your skin goals.
+          </p>
+          <div class="meta">
+            <span>90 mins</span>
+            <span>Hydrafacial + Microneedling + Free Consultation</span>
+          </div>
+        </div>
+
         <div class="service">
           <div class="service-top">
             <h3>Advanced Microneedling</h3>
             <div class="pill">From £70–£90</div>
           </div>
-          <p>Collagen-stimulating treatment to support acne scarring, enlarged pores, uneven texture, pigmentation and overall skin rejuvenation. Different levels are available depending on skin concern and treatment depth.</p>
+          <p>
+            A targeted collagen-stimulating treatment designed for acne scarring, enlarged pores, uneven texture and skin rejuvenation. Includes skin preparation, sterile microneedling treatment, calming finishing products and aftercare guidance, with treatment depth adjusted to your skin concern.
+          </p>
           <div class="meta">
             <span>60 mins</span>
             <span>Rejuvenation / Acne / Pigmentation</span>
@@ -945,7 +1001,9 @@
             <h3>Advanced Hydrafacial</h3>
             <div class="pill">£100</div>
           </div>
-          <p>Deep cleansing, exfoliation, extraction, hydration infusion, lymphatic drainage, cooling globes and LED to leave skin clearer, fresher and more radiant.</p>
+          <p>
+            A deep-cleansing treatment designed to leave skin clearer, fresher and more radiant. Includes double cleanse, gentle exfoliation, extractions where suitable, hydration infusion, cooling globes, lymphatic drainage and LED to finish.
+          </p>
           <div class="meta">
             <span>60 mins</span>
             <span>Hydration / Congestion / Glow</span>
@@ -957,7 +1015,9 @@
             <h3>Dermaplaning</h3>
             <div class="pill">£20</div>
           </div>
-          <p>A professional exfoliating treatment that removes dead skin build-up and peach fuzz for smoother texture, brighter skin and a cleaner makeup or skincare finish.</p>
+          <p>
+            A professional exfoliating treatment that removes dead skin build-up and peach fuzz for a smoother, brighter finish. Includes cleanse, skin preparation, dermaplaning and hydrating finishing products.
+          </p>
           <div class="meta">
             <span>15 mins</span>
             <span>Instant smooth finish</span>
@@ -969,7 +1029,9 @@
             <h3>New Client Skin Assessment</h3>
             <div class="pill">£45</div>
           </div>
-          <p>A detailed initial consultation to review your skin concerns, treatment suitability, routine and next steps, with tailored recommendations and skincare guidance.</p>
+          <p>
+            A detailed initial consultation to review your skin concerns, treatment suitability, current routine and next steps. Includes personalised recommendations and guidance on the treatments or skincare options best suited to your goals.
+          </p>
           <div class="meta">
             <span>60 mins</span>
             <span>For first-time clients</span>
@@ -981,7 +1043,9 @@
             <h3>Return Skin Assessment</h3>
             <div class="pill">£37.50</div>
           </div>
-          <p>A follow-up appointment to assess progress, refine your routine and update your treatment plan based on how your skin has been responding.</p>
+          <p>
+            A follow-up appointment to assess progress, review how your skin has been responding and refine your treatment plan or skincare approach where needed.
+          </p>
           <div class="meta">
             <span>60 mins</span>
             <span>Ongoing support</span>
@@ -993,7 +1057,9 @@
             <h3>Deep Cleansing Facial</h3>
             <div class="pill">£50</div>
           </div>
-          <p>Ideal for acne-prone, oily or congested skin. Includes cleansing, exfoliation, extractions, calming care and hydration to help rebalance the skin.</p>
+          <p>
+            Ideal for acne-prone, oily or congested skin. Includes cleanse, exfoliation, steam or softening prep where suitable, extractions, calming products and hydration to help rebalance the skin.
+          </p>
           <div class="meta">
             <span>45 mins</span>
             <span>Acne / Oily skin / Congestion</span>
@@ -1005,7 +1071,9 @@
             <h3>Express Facial</h3>
             <div class="pill">£30</div>
           </div>
-          <p>A shorter maintenance treatment for a fresh, polished glow when you want visible results in less time.</p>
+          <p>
+            A shorter maintenance treatment designed to refresh and brighten the skin. Includes cleanse, light exfoliation, hydration and finishing products for an instant glow.
+          </p>
           <div class="meta">
             <span>30 mins</span>
             <span>Maintenance / Glow / Hydration</span>
@@ -1071,6 +1139,29 @@
     </div>
   </section>
 
+  <section class="section-sm">
+    <div class="container split">
+      <div class="location-copy">
+        <div class="label">Getting here</div>
+        <h2 class="section-title">Easy to reach from across Sheffield.</h2>
+        <div class="gold-line left"></div>
+        <p>
+          Skin by Saif Clinic is based in Park Hill, Sheffield, in a central location that is convenient for clients travelling from the city centre and surrounding Sheffield areas.
+        </p>
+        <p>
+          Park Hill is well known and easy to find, making the clinic simple to access whether you are arriving on foot, by taxi or from nearby central transport links.
+        </p>
+        <p>
+          Once booked, full arrival details can be provided to help make your visit as smooth and stress-free as possible.
+        </p>
+      </div>
+
+      <div class="photo">
+        <img src="IMG_3970.jpeg" alt="Park Hill Sheffield location">
+      </div>
+    </div>
+  </section>
+
   <section class="section-sm section-center">
     <div class="container">
       <div class="label">Offers</div>
@@ -1109,6 +1200,11 @@
         </details>
 
         <details>
+          <summary>What is the Ultimate Skin Rejuvenation Facial?</summary>
+          <p>This is a premium combination treatment that brings together Hydrafacial and microneedling in one appointment to deeply cleanse, hydrate, refresh and support skin rejuvenation, with a free initial consultation included.</p>
+        </details>
+
+        <details>
           <summary>Are treatments personalised?</summary>
           <p>Yes. Treatments are adjusted around your skin type, concerns, sensitivity, current routine and treatment goals rather than using the same protocol for every client.</p>
         </details>
@@ -1119,6 +1215,21 @@
         </details>
 
         <details>
+          <summary>Do I need a consultation before treatment?</summary>
+          <p>Some treatments may require consultation or suitability checks beforehand. New clients are encouraged to book a skin assessment if they are unsure where to start.</p>
+        </details>
+
+        <details>
+          <summary>Where in Sheffield are you based?</summary>
+          <p>The clinic is based in Park Hill, Sheffield, in a convenient central location. Full arrival details can be provided after booking.</p>
+        </details>
+
+        <details>
+          <summary>Is Park Hill easy to get to?</summary>
+          <p>Yes. Park Hill is centrally located and easy to access from Sheffield city centre and surrounding areas, making it convenient for clients across Sheffield.</p>
+        </details>
+
+        <details>
           <summary>Can I book a course of treatments?</summary>
           <p>Yes. Courses may be booked at a discounted rate, and monthly payment options may be available depending on the treatment plan selected.</p>
         </details>
@@ -1126,6 +1237,11 @@
         <details>
           <summary>Do you offer discounts?</summary>
           <p>Yes. NHS and Blue Light Card holders receive 15% off. New clients can also use SKIN10 for £10 off treatments over £50 or SKIN5 for £5 off treatments under £50.</p>
+        </details>
+
+        <details>
+          <summary>How do I book?</summary>
+          <p>Appointments can be booked online through Treatwell. You can also follow along on Instagram for updates, results and clinic information.</p>
         </details>
       </div>
     </div>
@@ -1195,6 +1311,27 @@
             </div>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-sm" id="terms">
+    <div class="container">
+      <div class="label" style="display:table; margin:0 auto 14px;">Terms & conditions</div>
+      <h2 class="section-title" style="text-align:center;">Booking and clinic terms.</h2>
+      <div class="gold-line"></div>
+
+      <div class="tc-box">
+        <h3>Terms & Conditions</h3>
+        <p><strong>Appointments:</strong> All appointments are subject to availability and may require prior consultation or suitability assessment depending on the treatment booked.</p>
+        <p><strong>Consultation and suitability:</strong> Treatments are only carried out where considered appropriate. A treatment may be postponed, amended or declined if it is not suitable on the day.</p>
+        <p><strong>Arrival:</strong> Please arrive on time for your appointment. Late arrival may reduce treatment time and, in some cases, may require the appointment to be rescheduled.</p>
+        <p><strong>Cancellations and rescheduling:</strong> At least 48 hours’ notice is requested where possible. Late cancellations or missed appointments may be charged in line with the booking platform policy.</p>
+        <p><strong>Results:</strong> Individual results vary. No specific outcome can be guaranteed, as skin response differs from person to person and depends on factors such as homecare, consistency and skin history.</p>
+        <p><strong>Courses and offers:</strong> Discounted offers, codes, NHS or Blue Light promotions and treatment course pricing may be withdrawn or amended at any time. Offers may not be combined unless stated otherwise.</p>
+        <p><strong>Medical disclosure:</strong> Clients must disclose relevant medical conditions, allergies, medication and recent treatments before treatment. Failure to do so may affect treatment suitability and outcomes.</p>
+        <p><strong>Patch testing and aftercare:</strong> Where appropriate, patch testing and aftercare guidance must be followed. Skin by Saif Clinic cannot accept responsibility for issues arising where aftercare advice has not been followed.</p>
+        <p><strong>Right to refuse treatment:</strong> The clinic reserves the right to refuse or discontinue treatment where this is considered necessary for safety, suitability or professional reasons.</p>
       </div>
     </div>
   </section>
