@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Skin by Saif Clinic | Sheffield</title>
-  <meta name="description" content="Skin by Saif Clinic offers microneedling, hydrafacial, dermaplaning and personalised skin consultations in Sheffield." />
+  <title>Skin by Saif Clinic | Aesthetician & Skin Clinic in Sheffield</title>
+  <meta name="description" content="Skin by Saif Clinic in Sheffield offers advanced microneedling, hydrafacial, dermaplaning and personalised skin consultations in a calm private setting." />
   <style>
     :root{
       --bg:#f7f3ee;
@@ -66,6 +66,14 @@
       box-shadow:var(--shadow);
       background:#fff;
     }
+    .brand small{
+      display:block;
+      font-weight:600;
+      color:var(--muted);
+      font-size:12px;
+      letter-spacing:.04em;
+      text-transform:uppercase;
+    }
     .nav-links{
       display:flex;
       gap:18px;
@@ -85,7 +93,7 @@
       align-items:center;
     }
     .hero-card{
-      background:linear-gradient(180deg, rgba(255,255,255,.88), rgba(255,255,255,.68));
+      background:linear-gradient(180deg, rgba(255,255,255,.90), rgba(255,255,255,.70));
       border:1px solid rgba(182,145,78,.14);
       border-radius:32px;
       box-shadow:var(--shadow-soft);
@@ -212,12 +220,14 @@
       border-radius:99px;
     }
 
-    .about-grid{
+    .about-grid,
+    .founder-grid{
       display:grid;
       grid-template-columns:1fr 1fr;
       gap:24px;
       align-items:stretch;
     }
+
     .panel{
       background:linear-gradient(180deg, rgba(255,255,255,.90), rgba(255,255,255,.72));
       border:1px solid rgba(182,145,78,.12);
@@ -225,6 +235,7 @@
       box-shadow:var(--shadow-soft);
       padding:24px;
     }
+
     .about-logo{
       width:180px;
       margin:0 auto 18px;
@@ -234,6 +245,24 @@
       display:flex;
       flex-direction:column;
       justify-content:center;
+    }
+
+    .founder-panel{
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+    }
+
+    .founder-role{
+      display:inline-block;
+      padding:8px 12px;
+      border-radius:999px;
+      background:rgba(182,145,78,.12);
+      color:var(--gold-dark);
+      font-size:13px;
+      font-weight:700;
+      margin-bottom:14px;
+      width:fit-content;
     }
 
     .services{
@@ -247,6 +276,7 @@
       padding:22px;
       border:1px solid rgba(182,145,78,.12);
       box-shadow:var(--shadow);
+      text-align:left;
     }
     .service-top{
       display:flex;
@@ -337,6 +367,16 @@
     }
     .photo:hover img{transform:scale(1.02)}
 
+    .portrait-photo{
+      min-height:100%;
+    }
+    .portrait-photo img{
+      height:100%;
+      min-height:500px;
+      object-fit:cover;
+      object-position:center top;
+    }
+
     .results-grid{
       display:grid;
       grid-template-columns:1fr 1fr;
@@ -349,6 +389,7 @@
       gap:14px;
       max-width:900px;
       margin:0 auto;
+      text-align:left;
     }
     details{
       background:#fff;
@@ -442,6 +483,7 @@
     @media (max-width: 900px){
       .hero-wrap,
       .about-grid,
+      .founder-grid,
       .gallery-grid,
       .results-grid,
       .contact-grid,
@@ -454,6 +496,7 @@
       .hero-points{grid-template-columns:1fr}
       .nav{align-items:flex-start; flex-direction:column}
       .nav-links{justify-content:flex-start}
+      .portrait-photo img{min-height:380px}
     }
   </style>
 </head>
@@ -463,10 +506,14 @@
     <div class="container nav">
       <div class="brand">
         <img src="logo.PNG" alt="Skin by Saif logo">
-        <div>Skin by Saif Clinic</div>
+        <div>
+          <div>Skin by Saif Clinic</div>
+          <small>Aesthetician & Skin Practitioner</small>
+        </div>
       </div>
       <div class="nav-links">
         <a href="#about">About</a>
+        <a href="#founder">Founder</a>
         <a href="#treatments">Treatments</a>
         <a href="#results">Results</a>
         <a href="#clinic">Clinic</a>
@@ -479,10 +526,10 @@
   <section class="hero">
     <div class="container hero-wrap">
       <div class="hero-card">
-        <div class="eyebrow">Sheffield Skin Clinic • By Appointment</div>
-        <h1>Results-driven skin treatments in a beautiful private setting.</h1>
+        <div class="eyebrow">Sheffield Private Skin Clinic • By Appointment</div>
+        <h1>Advanced skin treatments with a personal, results-focused approach.</h1>
         <p class="lead">
-          Advanced microneedling, hydrafacial, dermaplaning and personalised skin consultations designed to improve acne, texture, pigmentation and overall skin health.
+          Thoughtfully delivered microneedling, hydrafacial, dermaplaning and personalised skin consultations designed to support clearer, healthier, more confident skin in a calm private setting.
         </p>
 
         <div class="cta-row">
@@ -504,18 +551,18 @@
           </div>
           <div class="point">
             <strong>Hydrafacial</strong>
-            <span>Deep cleanse, glow & hydration</span>
+            <span>Deep cleanse, hydration & glow</span>
           </div>
           <div class="point">
-            <strong>Consultations</strong>
-            <span>Tailored plans & ongoing support</span>
+            <strong>Personalised Plans</strong>
+            <span>Tailored to your skin goals</span>
           </div>
         </div>
       </div>
 
       <div class="hero-image">
         <img src="2F313773-5007-4400-915C-CC8FBB0AF2D1.png" alt="Skin by Saif treatment room">
-        <div class="hero-badge">Private, calm and welcoming clinic experience</div>
+        <div class="hero-badge">Private, professional and welcoming clinic experience</div>
       </div>
     </div>
   </section>
@@ -527,10 +574,10 @@
         <h2 class="section-title">About Skin by Saif</h2>
         <div class="gold-line"></div>
         <p class="section-sub">
-          Skin by Saif Clinic offers personalised skin treatments and consultations focused on clearer, healthier and more confident skin. Every appointment is tailored to your skin type, current concerns and long-term goals.
+          Skin by Saif Clinic is a Sheffield-based private skin clinic offering personalised treatments and consultations for clients looking to improve acne, texture, pigmentation, congestion, dehydration and overall skin health.
         </p>
         <p>
-          Treatments are carried out in a calm private setting with a strong focus on hygiene, careful consultation, skin safety and professional aftercare. Whether you are looking to improve acne, congestion, pigmentation, dehydration or overall texture, each plan is designed around what your skin genuinely needs.
+          Every appointment is approached with care, professionalism and attention to detail. Treatments are carried out in a calm private setting with a strong emphasis on consultation, hygiene, treatment suitability and thorough aftercare so that each client feels informed, comfortable and well looked after.
         </p>
       </div>
 
@@ -540,26 +587,49 @@
     </div>
   </section>
 
+  <section class="section" id="founder">
+    <div class="container founder-grid">
+      <div class="photo portrait-photo">
+        <img src="IMG_4083.jpeg" alt="Saif, founder of Skin by Saif Clinic">
+      </div>
+
+      <div class="panel founder-panel">
+        <span class="founder-role">Meet Your Aesthetician</span>
+        <h2 class="section-title">A personal journey into skin confidence</h2>
+        <div class="gold-line" style="margin-left:0;"></div>
+        <p>
+          Skin by Saif was founded from personal experience. After struggling with severe cystic acne and the confidence issues that came with it, skincare became far more than a beauty interest — it became a personal journey of understanding skin, healing, consistency and self-confidence.
+        </p>
+        <p>
+          That experience shaped the heart of the clinic: a place where clients feel understood, supported and never judged for their skin concerns. The aim is not only to deliver treatments that feel luxurious and professional, but to help clients build long-term confidence through tailored treatment plans, honest guidance and realistic skin goals.
+        </p>
+        <p>
+          With training in advanced skin treatments and a strong focus on treatment safety, cleanliness and personalised care, every service is designed to be both considered and results-driven.
+        </p>
+      </div>
+    </div>
+  </section>
+
   <section class="section section-center">
     <div class="container">
       <h2 class="section-title">A luxury approach to skin health</h2>
       <div class="gold-line"></div>
       <p class="section-sub">
-        Every treatment is designed to feel elevated, personal and considered — while still remaining results-focused and suitable for real skin concerns.
+        Every treatment is designed to feel elevated, personal and professional while remaining rooted in safe practice and real skin goals.
       </p>
 
       <div class="lux-grid">
         <div class="lux-card">
-          <h3>Clean & Professional</h3>
-          <p>Strict hygiene, carefully selected products, single-use consumables where appropriate and a strong focus on safe treatment practice.</p>
+          <h3>Professional Standards</h3>
+          <p>Strict hygiene, careful treatment preparation, professional setup and a strong emphasis on client safety and skin suitability.</p>
         </div>
         <div class="lux-card">
-          <h3>Personalised Treatments</h3>
-          <p>No one-size-fits-all approach. Treatments are adjusted to suit your skin condition, sensitivity, goals and treatment history.</p>
+          <h3>Personalised Care</h3>
+          <p>No one-size-fits-all approach. Treatments are tailored to your skin condition, sensitivity, concerns and long-term goals.</p>
         </div>
         <div class="lux-card">
-          <h3>Ongoing Skin Support</h3>
-          <p>From consultation to aftercare, the aim is to support long-term skin improvement rather than quick temporary fixes.</p>
+          <h3>Support Beyond The Appointment</h3>
+          <p>From consultation to aftercare, the focus is on lasting skin improvement, not just a quick temporary glow.</p>
         </div>
       </div>
     </div>
@@ -570,7 +640,7 @@
       <h2 class="section-title">Treatments</h2>
       <div class="gold-line"></div>
       <p class="section-sub">
-        A curated menu of advanced skin treatments designed around the most common client concerns: acne, dehydration, uneven skin tone, texture and rejuvenation.
+        A carefully curated treatment menu designed around common skin concerns including acne, dehydration, texture, congestion, pigmentation and overall rejuvenation.
       </p>
 
       <div class="services">
@@ -579,7 +649,7 @@
             <h3>Advanced Microneedling</h3>
             <div class="pill">From £70–£90</div>
           </div>
-          <p>Collagen-stimulating treatment for acne scars, enlarged pores, texture, fine lines and overall skin rejuvenation. Different levels are available depending on treatment depth and skin concern.</p>
+          <p>Collagen-stimulating treatment to support acne scarring, enlarged pores, uneven texture, fine lines and overall skin rejuvenation. Different treatment levels are available depending on skin concern and intensity.</p>
           <div class="meta"><span>60 mins</span><span>Rejuvenation / Acne / Pigmentation</span></div>
         </div>
 
@@ -588,7 +658,7 @@
             <h3>Advanced Hydrafacial</h3>
             <div class="pill">£100</div>
           </div>
-          <p>Deep cleanse, exfoliation, extraction, hydration infusion, cooling globes, lymphatic drainage and LED for glow, skin clarity and refreshed healthy-looking skin.</p>
+          <p>Deep cleanse, exfoliation, extraction, hydration infusion, cooling globes, lymphatic drainage and LED to refresh dull, congested or dehydrated skin while supporting a healthier glow.</p>
           <div class="meta"><span>60 mins</span><span>Hydration / Congestion / Glow</span></div>
         </div>
 
@@ -597,7 +667,7 @@
             <h3>Dermaplaning</h3>
             <div class="pill">£20</div>
           </div>
-          <p>Removes dead skin build-up and peach fuzz for smoother texture, brighter skin and better product absorption, leaving the skin looking fresh and polished.</p>
+          <p>A professional exfoliating treatment that removes dead skin build-up and peach fuzz for smoother texture, brighter skin and enhanced product absorption.</p>
           <div class="meta"><span>15 mins</span><span>Instant smooth finish</span></div>
         </div>
 
@@ -606,7 +676,7 @@
             <h3>New Client Skin Assessment</h3>
             <div class="pill">£45</div>
           </div>
-          <p>Detailed initial consultation to assess skin concerns, current routine, treatment suitability and tailored next steps including treatment recommendations and skincare guidance.</p>
+          <p>A detailed initial consultation to review your skin concerns, current routine, treatment suitability and next steps, with tailored treatment recommendations and skincare guidance.</p>
           <div class="meta"><span>60 mins</span><span>For first-time clients</span></div>
         </div>
 
@@ -615,7 +685,7 @@
             <h3>Return Skin Assessment</h3>
             <div class="pill">£37.50</div>
           </div>
-          <p>Follow-up appointment to review progress, update routine guidance and refine your treatment plan based on how your skin has been responding.</p>
+          <p>Follow-up review appointment to assess progress, refine your routine and adjust your treatment plan according to how your skin has been responding.</p>
           <div class="meta"><span>60 mins</span><span>Ongoing support</span></div>
         </div>
 
@@ -624,7 +694,7 @@
             <h3>Deep Cleansing Facial</h3>
             <div class="pill">£50</div>
           </div>
-          <p>For acne, oily skin and congestion. Includes cleanse, exfoliation, extractions, calming support and hydration to help rebalance and refresh the skin.</p>
+          <p>Ideal for oily, blemish-prone or congested skin. Includes cleanse, exfoliation, extractions, calming support and hydration to help rebalance and refresh the skin.</p>
           <div class="meta"><span>45 mins</span><span>Acne / congestion / oily skin</span></div>
         </div>
 
@@ -633,7 +703,7 @@
             <h3>Express Facial</h3>
             <div class="pill">£30</div>
           </div>
-          <p>A quick refresh treatment ideal for maintenance, glow and hydration in a shorter appointment while still giving the skin a polished professional finish.</p>
+          <p>A shorter maintenance treatment designed to refresh, hydrate and brighten the skin while still delivering a polished professional finish.</p>
           <div class="meta"><span>30 mins</span><span>Great first treatment</span></div>
         </div>
       </div>
@@ -643,17 +713,17 @@
   <section class="section section-center">
     <div class="container offer-grid">
       <div class="offer-card">
-        <h3>Courses & Monthly Options</h3>
+        <h3>Courses & Flexible Options</h3>
         <p>
-          Treatment courses are available at a discounted rate for clients booking a longer-term plan. Monthly payment options may also be available when a course is booked.
+          Treatment courses are available at a discounted rate for clients committing to a longer-term skin plan. Monthly payment options may also be available on selected courses.
         </p>
       </div>
       <div class="offer-card">
-        <h3>Introductory Offers</h3>
+        <h3>Exclusive Offers</h3>
         <p>
-          Use code <strong>SKIN10</strong> for <strong>£10 off</strong> treatments over <strong>£50</strong>, or code <strong>SKIN5</strong> for <strong>£5 off</strong> treatments below <strong>£50</strong>.
+          <strong>15% off</strong> is available for <strong>NHS</strong> and <strong>Blue Light Card</strong> holders. New clients can also use <strong>SKIN10</strong> for <strong>£10 off</strong> treatments over <strong>£50</strong>, or <strong>SKIN5</strong> for <strong>£5 off</strong> treatments under <strong>£50</strong>.
         </p>
-        <div class="discount-code">SKIN10 • SKIN5</div>
+        <div class="discount-code">NHS15 • SKIN10 • SKIN5</div>
       </div>
     </div>
   </section>
@@ -671,9 +741,9 @@
         </div>
       </div>
       <div class="panel">
-        <h2 class="section-title">What we focus on</h2>
+        <h2 class="section-title" style="text-align:center;">What We Focus On</h2>
         <div class="gold-line"></div>
-        <p style="text-align:center;">Each treatment plan is tailored around the concerns most clients want help with:</p>
+        <p style="text-align:center;">Each treatment plan is tailored around the concerns many clients want support with:</p>
         <div class="contact-list">
           <div class="contact-item"><div class="icon">•</div><div>Acne and congestion</div></div>
           <div class="contact-item"><div class="icon">•</div><div>Pigmentation and uneven skin tone</div></div>
@@ -720,23 +790,23 @@
       <div class="faq-grid">
         <details>
           <summary>How do I know which treatment is right for me?</summary>
-          <p>New clients can book a skin assessment where your concerns, routine and skin condition are reviewed before recommending the most suitable treatment plan.</p>
+          <p>New clients can book a skin assessment where your concerns, routine and skin condition are reviewed before the most suitable treatment plan is recommended.</p>
         </details>
         <details>
           <summary>Are treatments personalised?</summary>
-          <p>Yes. Treatments are tailored to your skin type, concerns, sensitivity, current routine and overall treatment goals rather than using the same protocol for everyone.</p>
+          <p>Yes. Every treatment is tailored to your skin type, concerns, sensitivity, current routine and treatment goals rather than following the same protocol for every client.</p>
         </details>
         <details>
           <summary>How is hygiene handled in clinic?</summary>
-          <p>Skin by Saif Clinic places a strong emphasis on cleanliness, treatment safety and professional setup, including careful product handling, skin preparation and hygienic working practices throughout each appointment.</p>
+          <p>Skin by Saif Clinic places a strong emphasis on cleanliness, treatment safety and professional working standards, including careful skin preparation, hygienic treatment practice and professional aftercare guidance.</p>
         </details>
         <details>
           <summary>Can I book a course of treatments?</summary>
-          <p>Yes. Courses may be booked at a discounted rate, and monthly payment options may be available depending on the course selected.</p>
+          <p>Yes. Courses may be booked at a discounted rate, and monthly payment options may be available depending on the treatment plan selected.</p>
         </details>
         <details>
           <summary>Do you offer discounts?</summary>
-          <p>Yes. Use code SKIN10 for £10 off treatments over £50, or SKIN5 for £5 off treatments below £50.</p>
+          <p>Yes. NHS and Blue Light Card holders receive 15% off. New clients can also use SKIN10 for £10 off treatments over £50 or SKIN5 for £5 off treatments under £50.</p>
         </details>
       </div>
     </div>
@@ -748,7 +818,7 @@
         <h2 class="section-title">Book & Connect</h2>
         <div class="gold-line"></div>
         <p class="section-sub">
-          Ready to start your skin journey? Book your appointment online or follow along on Instagram.
+          Ready to begin your skin journey? Book your appointment online or keep up with treatments, results and updates on Instagram.
         </p>
         <div class="cta-row" style="justify-content:center;">
           <a class="btn btn-gold" href="https://treatwellapp.page.link/HYpBb" target="_blank" rel="noopener">Book on Treatwell</a>
