@@ -1,1198 +1,336 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <title>Skin by Saif Clinic | Microneedling, Facials & Skin Clinic in Sheffield</title>
-  <meta name="description" content="Private Sheffield skin clinic offering microneedling, hydrafacial, dermaplaning and personalised skin consultations for acne, texture, pigmentation and skin confidence." />
-  <meta name="robots" content="index, follow" />
-
-  <meta property="og:title" content="Skin by Saif Clinic | Sheffield Skin Clinic" />
-  <meta property="og:description" content="Microneedling, hydrafacial, dermaplaning and personalised skin consultations in Sheffield." />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="logo.jpg" />
-
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"BeautySalon",
-    "name":"Skin by Saif Clinic",
-    "image":"logo.jpg",
-    "url":"https://skinbysaif.github.io/",
-    "telephone":"+44 1144387655",
-    "email":"skinbysaif@gmail.com",
-    "priceRange":"£20-£130",
-    "address":{
-      "@type":"PostalAddress",
-      "addressLocality":"Sheffield",
-      "addressRegion":"South Yorkshire",
-      "addressCountry":"GB"
-    },
-    "sameAs":[
-      "https://instagram.com/skinbysaif",
-      "https://www.facebook.com/share/18F4UPGhCZ/?mibextid=wwXIfr"
-    ],
-    "description":"Private Sheffield skin clinic offering advanced facials, microneedling, hydrafacial, dermaplaning and personalised skin consultations."
-  }
-  </script>
-
-  <style>
-    :root{
-      --bg:#fbf8f4;
-      --bg-soft:#f2ebe3;
-      --surface:#ffffff;
-      --surface-soft:#f7f1ea;
-      --text:#241f1c;
-      --muted:#6c625b;
-      --accent:#aa7f4b;
-      --accent-dark:#86633a;
-      --line:rgba(170,127,75,.16);
-      --line-soft:rgba(36,31,28,.07);
-      --shadow:0 12px 30px rgba(20,16,12,.055);
-      --shadow-strong:0 18px 42px rgba(20,16,12,.08);
-      --radius:18px;
-      --radius-lg:26px;
-      --max:1140px;
-      --instagram-1:#feda75;
-      --instagram-2:#fa7e1e;
-      --instagram-3:#d62976;
-      --instagram-4:#962fbf;
-      --instagram-5:#4f5bd5;
-      --facebook:#1877f2;
-      --lux-gradient:linear-gradient(135deg, rgba(255,255,255,.98), rgba(247,241,234,.93));
-    }
-
-    *{box-sizing:border-box}
-
-    html{
-      scroll-behavior:smooth;
-    }
-
-    body{
-      margin:0;
-      font-family:Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      color:var(--text);
-      background:
-        radial-gradient(circle at top left, #fffdf9 0%, transparent 28%),
-        linear-gradient(180deg, var(--bg) 0%, var(--bg-soft) 100%);
-      line-height:1.65;
-      -webkit-font-smoothing:antialiased;
-      text-rendering:optimizeLegibility;
-    }
-
-    img{
-      max-width:100%;
-      display:block;
-    }
-
-    a{
-      color:inherit;
-      text-decoration:none;
-    }
-
-    .container{
-      width:min(var(--max), calc(100% - 32px));
-      margin:0 auto;
-    }
-
-    .announcement-bar{
-      background:linear-gradient(180deg, #b98c57, #9d7343);
-      color:#fff;
-      text-align:center;
-      font-size:13px;
-      font-weight:700;
-      letter-spacing:.04em;
-      padding:10px 16px;
-    }
-
-    .topbar{
-      position:sticky;
-      top:0;
-      z-index:100;
-      background:rgba(251,248,244,.94);
-      border-bottom:1px solid rgba(0,0,0,.06);
-      backdrop-filter:saturate(140%) blur(10px);
-    }
-
-    .nav{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:24px;
-      padding:14px 0;
-    }
-
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:12px;
-      min-width:0;
-    }
-
-    .brand img{
-      width:42px;
-      height:42px;
-      border-radius:50%;
-      object-fit:cover;
-      border:1px solid rgba(0,0,0,.07);
-      background:#fff;
-      flex-shrink:0;
-    }
-
-    .brand-text{
-      min-width:0;
-    }
-
-    .brand-title{
-      font-weight:600;
-      font-size:15px;
-      letter-spacing:.01em;
-    }
-
-    .brand-sub{
-      color:var(--muted);
-      font-size:10px;
-      letter-spacing:.14em;
-      text-transform:uppercase;
-      margin-top:3px;
-    }
-
-    .nav-links{
-      display:flex;
-      align-items:center;
-      gap:18px;
-      flex-wrap:wrap;
-      font-size:13px;
-      color:var(--muted);
-    }
-
-    .nav-links a{
-      padding:4px 0;
-      transition:.2s ease;
-    }
-
-    .nav-links a:hover{
-      color:var(--text);
-    }
-
-    .hero{
-      padding:54px 0 34px;
-    }
-
-    .hero-wrap{
-      display:grid;
-      grid-template-columns:1.02fr .98fr;
-      gap:34px;
-      align-items:center;
-    }
-
-    .hero-copy{
-      padding-right:8px;
-    }
-
-    .eyebrow{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      padding:8px 12px;
-      border-radius:999px;
-      background:var(--surface-soft);
-      color:var(--accent-dark);
-      border:1px solid var(--line);
-      font-size:12px;
-      font-weight:700;
-      letter-spacing:.05em;
-      text-transform:uppercase;
-      margin-bottom:18px;
-    }
-
-    h1,h2,h3{
-      font-family:Georgia, "Times New Roman", serif;
-      letter-spacing:-.02em;
-      color:var(--text);
-    }
-
-    h1{
-      font-size:clamp(40px, 6vw, 70px);
-      line-height:1.03;
-      margin:0 0 16px;
-      max-width:11ch;
-      text-wrap:balance;
-    }
-
-    .lead{
-      font-size:18px;
-      color:var(--muted);
-      max-width:58ch;
-      margin:0 0 24px;
-      text-wrap:pretty;
-    }
-
-    .cta-row{
-      display:flex;
-      flex-wrap:wrap;
-      gap:14px;
-      justify-content:flex-start;
-      align-items:center;
-      margin:0 0 28px;
-    }
-
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap:10px;
-      min-height:50px;
-      padding:0 20px;
-      border-radius:999px;
-      font-weight:700;
-      font-size:15px;
-      transition:transform .22s ease, box-shadow .22s ease, border-color .22s ease;
-      border:1px solid transparent;
-      text-align:center;
-    }
-
-    .btn:hover{
-      transform:translateY(-2px);
-    }
-
-    .btn svg{
-      width:18px;
-      height:18px;
-      flex-shrink:0;
-    }
-
-    .btn-primary{
-      background:linear-gradient(180deg, #b98c57, #9d7343);
-      color:#fff;
-      box-shadow:0 10px 22px rgba(157,115,67,.22);
-    }
-
-    .btn-instagram{
-      color:#fff;
-      background:linear-gradient(135deg, var(--instagram-1), var(--instagram-2), var(--instagram-3), var(--instagram-4), var(--instagram-5));
-      box-shadow:0 10px 22px rgba(214,41,118,.20);
-    }
-
-    .btn-facebook{
-      color:#fff;
-      background:linear-gradient(180deg, #2b86ff, var(--facebook));
-      box-shadow:0 10px 22px rgba(24,119,242,.20);
-    }
-
-    .hero-points{
-      display:grid;
-      grid-template-columns:repeat(3, minmax(0,1fr));
-      gap:14px;
-      max-width:720px;
-    }
-
-    .point{
-      background:rgba(255,255,255,.8);
-      border:1px solid var(--line-soft);
-      border-radius:16px;
-      padding:16px 14px;
-      box-shadow:var(--shadow);
-      text-align:center;
-      transition:transform .28s ease, box-shadow .28s ease;
-    }
-
-    .point:hover{
-      transform:translateY(-4px);
-      box-shadow:var(--shadow-strong);
-    }
-
-    .point strong{
-      display:block;
-      font-size:15px;
-      margin-bottom:4px;
-    }
-
-    .point span{
-      display:block;
-      color:var(--muted);
-      font-size:13px;
-      line-height:1.45;
-    }
-
-    .hero-image{
-      position:relative;
-      min-height:600px;
-      border-radius:var(--radius-lg);
-      overflow:hidden;
-      box-shadow:var(--shadow-strong);
-      border:1px solid var(--line-soft);
-      background:#fff;
-    }
-
-    .hero-image img{
-      width:100%;
-      height:100%;
-      object-fit:cover;
-    }
-
-    .hero-badge{
-      position:absolute;
-      left:18px;
-      bottom:18px;
-      background:rgba(255,255,255,.96);
-      border:1px solid var(--line-soft);
-      color:var(--text);
-      padding:10px 14px;
-      border-radius:14px;
-      box-shadow:var(--shadow);
-      font-size:14px;
-      line-height:1.3;
-      max-width:300px;
-      backdrop-filter:blur(8px);
-    }
-
-    .section{
-      padding:62px 0;
-    }
-
-    .section-sm{
-      padding:46px 0;
-    }
-
-    .section-center{
-      text-align:center;
-    }
-
-    .section-title{
-      font-size:clamp(30px, 4vw, 46px);
-      line-height:1.08;
-      margin:0 0 10px;
-      text-wrap:balance;
-    }
-
-    .section-sub{
-      color:var(--muted);
-      max-width:64ch;
-      margin:0 auto;
-      text-wrap:pretty;
-    }
-
-    .gold-line{
-      width:82px;
-      height:2px;
-      border-radius:99px;
-      margin:0 auto 20px;
-      background:linear-gradient(90deg, transparent, var(--accent), transparent);
-    }
-
-    .gold-line.left{
-      margin:0 0 20px;
-    }
-
-    .section-heading{
-      margin-bottom:28px;
-    }
-
-    .split{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:36px;
-      align-items:center;
-    }
-
-    .photo{
-      border-radius:22px;
-      overflow:hidden;
-      background:#fff;
-      border:1px solid var(--line-soft);
-      box-shadow:var(--shadow-strong);
-      transition:transform .28s ease, box-shadow .28s ease;
-    }
-
-    .photo:hover{
-      transform:translateY(-4px);
-      box-shadow:0 20px 46px rgba(20,16,12,.10);
-    }
-
-    .photo img{
-      width:100%;
-      height:100%;
-      object-fit:cover;
-    }
-
-    .about-copy p,
-    .founder-copy p,
-    .location-copy p{
-      margin:0 0 16px;
-      color:var(--muted);
-    }
-
-    .about-copy p:last-child,
-    .founder-copy p:last-child,
-    .location-copy p:last-child{
-      margin-bottom:0;
-    }
-
-    .founder-grid{
-      display:grid;
-      grid-template-columns:.75fr 1.25fr;
-      gap:42px;
-      align-items:center;
-    }
-
-    .portrait-wrap{
-      display:flex;
-      justify-content:center;
-      align-items:center;
-    }
-
-    .portrait-photo{
-      width:min(100%, 290px);
-      margin:0 auto;
-      border-radius:22px;
-      overflow:hidden;
-      background:#fff;
-      border:1px solid var(--line-soft);
-      box-shadow:var(--shadow-strong);
-      transition:transform .28s ease, box-shadow .28s ease;
-    }
-
-    .portrait-photo:hover{
-      transform:translateY(-4px);
-      box-shadow:0 20px 46px rgba(20,16,12,.10);
-    }
-
-    .portrait-photo img{
-      width:100%;
-      height:340px;
-      object-fit:cover;
-      object-position:center top;
-    }
-
-    .label{
-      display:inline-flex;
-      align-items:center;
-      padding:8px 12px;
-      border-radius:999px;
-      background:var(--surface-soft);
-      border:1px solid var(--line);
-      color:var(--accent-dark);
-      font-size:12px;
-      font-weight:700;
-      letter-spacing:.06em;
-      text-transform:uppercase;
-      margin-bottom:14px;
-    }
-
-    .services{
-      display:grid;
-      grid-template-columns:repeat(2, minmax(0,1fr));
-      gap:18px;
-      margin-top:28px;
-    }
-
-    .service{
-      background:var(--lux-gradient);
-      border:1px solid var(--line-soft);
-      border-radius:18px;
-      padding:22px;
-      box-shadow:var(--shadow);
-      text-align:left;
-      display:flex;
-      flex-direction:column;
-      gap:14px;
-      transition:transform .28s ease, box-shadow .28s ease, border-color .28s ease;
-    }
-
-    .service:hover{
-      transform:translateY(-4px);
-      box-shadow:var(--shadow-strong);
-    }
-
-    .service.featured{
-      border:1px solid rgba(170,127,75,.28);
-      box-shadow:0 18px 40px rgba(157,115,67,.09);
-    }
-
-    .service-image{
-      position:relative;
-      overflow:hidden;
-      border-radius:16px;
-      aspect-ratio:16 / 10;
-      background:var(--surface-soft);
-      border:1px solid var(--line-soft);
-      margin-bottom:2px;
-    }
-
-    .service-image img{
-      width:100%;
-      height:100%;
-      object-fit:cover;
-      transition:transform .45s ease;
-    }
-
-    .service:hover .service-image img{
-      transform:scale(1.04);
-    }
-
-    .service-top{
-      display:flex;
-      align-items:flex-start;
-      justify-content:space-between;
-      gap:14px;
-      margin-bottom:0;
-    }
-
-    .service h3{
-      margin:0;
-      font-size:22px;
-      line-height:1.15;
-    }
-
-    .pill{
-      flex-shrink:0;
-      padding:8px 12px;
-      border-radius:999px;
-      background:var(--surface-soft);
-      border:1px solid var(--line);
-      color:var(--accent-dark);
-      font-size:13px;
-      font-weight:700;
-    }
-
-    .pill.featured{
-      background:linear-gradient(180deg, #b98c57, #9d7343);
-      color:#fff;
-      border:none;
-    }
-
-    .service p{
-      color:var(--muted);
-      margin:0;
-      font-size:15px;
-    }
-
-    .service-actions{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:12px;
-      flex-wrap:wrap;
-      padding-top:14px;
-      border-top:1px solid var(--line-soft);
-    }
-
-    .price-book{
-      display:flex;
-      align-items:center;
-      gap:10px;
-      flex-wrap:wrap;
-    }
-
-    .book-inline{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      min-height:40px;
-      padding:0 16px;
-      border-radius:999px;
-      font-weight:700;
-      font-size:14px;
-      background:linear-gradient(180deg, #b98c57, #9d7343);
-      color:#fff;
-      box-shadow:0 8px 18px rgba(157,115,67,.18);
-      white-space:nowrap;
-      transition:transform .22s ease, box-shadow .22s ease;
-    }
-
-    .book-inline:hover{
-      transform:translateY(-2px);
-      box-shadow:0 12px 24px rgba(157,115,67,.24);
-    }
-
-    .meta{
-      display:flex;
-      justify-content:space-between;
-      gap:12px;
-      flex-wrap:wrap;
-      color:var(--muted);
-      font-size:14px;
-    }
-
-    .why-grid{
-      display:grid;
-      grid-template-columns:repeat(3, minmax(0,1fr));
-      gap:18px;
-      margin-top:28px;
-    }
-
-    .why-card{
-      background:#fff;
-      border:1px solid var(--line-soft);
-      border-radius:18px;
-      padding:24px;
-      box-shadow:var(--shadow);
-      text-align:left;
-      transition:transform .28s ease, box-shadow .28s ease;
-    }
-
-    .why-card:hover{
-      transform:translateY(-4px);
-      box-shadow:var(--shadow-strong);
-    }
-
-    .why-card h3{
-      font-size:21px;
-      margin:0 0 8px;
-    }
-
-    .why-card p{
-      margin:0;
-      color:var(--muted);
-      font-size:15px;
-    }
-
-    .results-grid{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:30px;
-      align-items:center;
-    }
-
-    .focus-list{
-      display:grid;
-      gap:12px;
-      margin-top:18px;
-    }
-
-    .focus-item{
-      display:flex;
-      align-items:center;
-      gap:12px;
-      padding:14px 16px;
-      background:#fff;
-      border:1px solid var(--line-soft);
-      border-radius:16px;
-      box-shadow:var(--shadow);
-      color:var(--text);
-    }
-
-    .focus-dot{
-      width:34px;
-      height:34px;
-      border-radius:50%;
-      display:grid;
-      place-items:center;
-      background:var(--surface-soft);
-      border:1px solid var(--line);
-      color:var(--accent-dark);
-      flex-shrink:0;
-      font-weight:700;
-    }
-
-    .gallery-grid{
-      display:grid;
-      grid-template-columns:1.15fr .85fr;
-      gap:18px;
-      margin-top:28px;
-    }
-
-    .gallery-stack{
-      display:grid;
-      gap:18px;
-    }
-
-    .offer-grid{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:18px;
-      margin-top:28px;
-    }
-
-    .offer-card{
-      background:#fff;
-      border:1px solid var(--line-soft);
-      border-radius:18px;
-      padding:26px;
-      box-shadow:var(--shadow);
-      text-align:center;
-      transition:transform .28s ease, box-shadow .28s ease;
-    }
-
-    .offer-card:hover{
-      transform:translateY(-4px);
-      box-shadow:var(--shadow-strong);
-    }
-
-    .offer-card h3{
-      margin:0 0 10px;
-      font-size:24px;
-    }
-
-    .offer-card p{
-      margin:0;
-      color:var(--muted);
-    }
-
-    .discount-code{
-      display:inline-block;
-      margin-top:16px;
-      padding:11px 18px;
-      border-radius:999px;
-      background:var(--surface-soft);
-      border:1px solid var(--line);
-      color:var(--accent-dark);
-      font-weight:800;
-      letter-spacing:.04em;
-    }
-
-    .faq-grid{
-      display:grid;
-      gap:14px;
-      max-width:900px;
-      margin:28px auto 0;
-      text-align:left;
-    }
-
-    details{
-      background:#fff;
-      border:1px solid var(--line-soft);
-      border-radius:16px;
-      padding:18px 20px;
-      box-shadow:var(--shadow);
-      overflow:hidden;
-      transition:transform .28s ease, box-shadow .28s ease;
-    }
-
-    details:hover{
-      transform:translateY(-2px);
-      box-shadow:var(--shadow-strong);
-    }
-
-    summary{
-      cursor:pointer;
-      font-weight:700;
-      list-style:none;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:18px;
-    }
-
-    summary::-webkit-details-marker{display:none}
-
-    summary::after{
-      content:"+";
-      flex-shrink:0;
-      font-size:22px;
-      line-height:1;
-      color:var(--accent-dark);
-    }
-
-    details[open] summary::after{
-      content:"−";
-    }
-
-    details p{
-      color:var(--muted);
-      margin:12px 0 0;
-      max-width:70ch;
-    }
-
-    .contact-grid{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:18px;
-      align-items:stretch;
-      margin-top:28px;
-    }
-
-    .contact-panel{
-      background:#fff;
-      border:1px solid var(--line-soft);
-      border-radius:20px;
-      padding:28px;
-      box-shadow:var(--shadow);
-      transition:transform .28s ease, box-shadow .28s ease;
-    }
-
-    .contact-panel:hover{
-      transform:translateY(-4px);
-      box-shadow:var(--shadow-strong);
-    }
-
-    .contact-panel.center{
-      text-align:center;
-    }
-
-    .contact-panel.center .cta-row{
-      justify-content:center;
-      margin-top:20px;
-      margin-bottom:0;
-    }
-
-    .contact-list{
-      display:grid;
-      gap:12px;
-      margin-top:12px;
-    }
-
-    .contact-item{
-      display:flex;
-      align-items:center;
-      gap:12px;
-      padding:14px 16px;
-      background:var(--surface);
-      border:1px solid var(--line-soft);
-      border-radius:16px;
-    }
-
-    .icon{
-      width:38px;
-      height:38px;
-      display:grid;
-      place-items:center;
-      border-radius:50%;
-      background:var(--surface-soft);
-      border:1px solid var(--line);
-      color:var(--accent-dark);
-      flex-shrink:0;
-    }
-
-    .tc-box{
-      background:#fff;
-      border:1px solid var(--line-soft);
-      border-radius:20px;
-      padding:28px;
-      box-shadow:var(--shadow);
-      margin-top:28px;
-      text-align:left;
-      transition:transform .28s ease, box-shadow .28s ease;
-    }
-
-    .tc-box:hover{
-      transform:translateY(-4px);
-      box-shadow:var(--shadow-strong);
-    }
-
-    .tc-box h3{
-      margin:0 0 14px;
-      font-size:26px;
-    }
-
-    .tc-box p{
-      margin:0 0 14px;
-      color:var(--muted);
-      font-size:14px;
-    }
-
-    .tc-box p:last-child{
-      margin-bottom:0;
-    }
-
-    .footer{
-      padding:34px 0 48px;
-      text-align:center;
-      color:var(--muted);
-      font-size:14px;
-    }
-
-    .reveal{
-      opacity:0;
-      transform:translateY(24px);
-      transition:opacity .8s ease, transform .8s ease;
-      will-change:opacity, transform;
-    }
-
-    .reveal.is-visible{
-      opacity:1;
-      transform:translateY(0);
-    }
-
-    @media (prefers-reduced-motion: reduce){
-      .reveal{
-        opacity:1;
-        transform:none;
-        transition:none;
-      }
-
-      .service,
-      .why-card,
-      .offer-card,
-      .contact-panel,
-      .tc-box,
-      .photo,
-      details,
-      .point,
-      .btn,
-      .book-inline{
-        transition:none;
-      }
-
-      html{
-        scroll-behavior:auto;
-      }
-    }
-
-<section class="section section-center reveal" id="treatments">
-<div class="container">
-
-<div class="label">Treatments</div>
-<h2 class="section-title">A curated treatment menu for real skin concerns.</h2>
-<div class="gold-line"></div>
-
-<p class="section-sub">
-Focused on acne, congestion, dehydration, uneven tone, scarring, texture and overall skin rejuvenation.
-</p>
-
-<div class="services">
-
-<div class="service featured">
-<div class="service-image">
-<img src="IMG_4094.jpeg" alt="Ultimate Skin Rejuvenation Facial">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Skin by Saif Clinic | Sheffield Skin Clinic</title>
+
+<meta name="description" content="Private Sheffield skin clinic offering microneedling, hydrafacial, dermaplaning and personalised skin consultations for acne, pigmentation, scarring and skin rejuvenation.">
+
+<meta property="og:title" content="Skin by Saif Clinic">
+<meta property="og:description" content="Advanced skin treatments in Sheffield including microneedling and hydrafacial.">
+<meta property="og:image" content="logo.jpg">
+<meta property="og:type" content="website">
+
+<!-- GOOGLE SEO SCHEMA -->
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "MedicalBusiness",
+ "name": "Skin by Saif Clinic",
+ "image": "logo.jpg",
+ "telephone": "+44 1144387655",
+ "address": {
+   "@type": "PostalAddress",
+   "addressLocality": "Sheffield",
+   "addressCountry": "UK"
+ },
+ "sameAs": [
+   "https://instagram.com/skinbysaif",
+   "https://www.facebook.com/share/18F4UPGhCZ"
+ ],
+ "priceRange": "£20-£130",
+ "medicalSpecialty": "Dermatology"
+}
+</script>
+
+<style>
+
+:root{
+--accent:#b98c57;
+--accent-dark:#8e6c42;
+--bg:#fbf8f4;
+--text:#241f1c;
+--muted:#6c625b;
+--radius:20px;
+--shadow:0 14px 40px rgba(0,0,0,.08);
+}
+
+*{box-sizing:border-box}
+
+body{
+margin:0;
+font-family:Inter, system-ui;
+background:var(--bg);
+color:var(--text);
+line-height:1.6;
+}
+
+.container{
+width:min(1100px,92%);
+margin:auto;
+}
+
+h1,h2,h3{
+font-family:Georgia,serif;
+letter-spacing:-.02em;
+}
+
+img{
+max-width:100%;
+display:block;
+border-radius:18px;
+}
+
+a{text-decoration:none;color:inherit}
+
+section{
+padding:70px 0;
+}
+
+.section-title{
+font-size:38px;
+margin-bottom:10px;
+}
+
+.section-sub{
+color:var(--muted);
+max-width:640px;
+margin:auto;
+}
+
+/* NAV */
+
+.navbar{
+position:sticky;
+top:0;
+background:#fff;
+border-bottom:1px solid #eee;
+z-index:99;
+}
+
+.nav-inner{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:14px 0;
+}
+
+.nav-links{
+display:flex;
+gap:20px;
+font-size:14px;
+color:var(--muted);
+}
+
+/* HERO */
+
+.hero{
+display:grid;
+grid-template-columns:1fr 1fr;
+align-items:center;
+gap:50px;
+padding:80px 0;
+}
+
+.hero h1{
+font-size:58px;
+line-height:1.05;
+}
+
+.hero p{
+font-size:18px;
+color:var(--muted);
+}
+
+.hero-image{
+position:relative;
+overflow:hidden;
+border-radius:var(--radius);
+box-shadow:var(--shadow);
+}
+
+.hero-badge{
+position:absolute;
+bottom:20px;
+left:20px;
+background:#fff;
+padding:10px 16px;
+border-radius:12px;
+font-size:14px;
+box-shadow:var(--shadow);
+}
+
+/* BUTTONS */
+
+.btn{
+display:inline-flex;
+align-items:center;
+gap:8px;
+padding:14px 22px;
+border-radius:999px;
+font-weight:600;
+transition:.25s;
+}
+
+.btn-primary{
+background:linear-gradient(#b98c57,#9d7343);
+color:white;
+}
+
+.btn-primary:hover{
+transform:translateY(-2px);
+}
+
+.btn-instagram{
+background:linear-gradient(45deg,#feda75,#d62976,#962fbf);
+color:white;
+}
+
+.btn-facebook{
+background:#1877f2;
+color:white;
+}
+
+/* TREATMENTS */
+
+.treatments{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:24px;
+margin-top:40px;
+}
+
+.treatment{
+background:white;
+border-radius:var(--radius);
+box-shadow:var(--shadow);
+overflow:hidden;
+transition:.25s;
+}
+
+.treatment:hover{
+transform:translateY(-4px);
+}
+
+.treatment-content{
+padding:22px;
+}
+
+.price-row{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-top:16px;
+}
+
+/* FAQ */
+
+.faq{
+max-width:800px;
+margin:auto;
+margin-top:40px;
+}
+
+.faq-item{
+border-bottom:1px solid #eee;
+padding:20px 0;
+cursor:pointer;
+}
+
+.faq-answer{
+max-height:0;
+overflow:hidden;
+transition:.4s;
+color:var(--muted);
+}
+
+.faq-item.active .faq-answer{
+max-height:200px;
+margin-top:10px;
+}
+
+/* CONTACT */
+
+.contact-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:30px;
+margin-top:40px;
+}
+
+.contact-box{
+background:white;
+padding:28px;
+border-radius:var(--radius);
+box-shadow:var(--shadow);
+}
+
+/* ANIMATIONS */
+
+.fade{
+opacity:0;
+transform:translateY(20px);
+transition:.8s;
+}
+
+.fade.show{
+opacity:1;
+transform:none;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+.hero{
+grid-template-columns:1fr;
+}
+
+.treatments{
+grid-template-columns:1fr;
+}
+
+.contact-grid{
+grid-template-columns:1fr;
+}
+
+.hero h1{
+font-size:40px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="navbar">
+<div class="container nav-inner">
+
+<div style="display:flex;align-items:center;gap:10px;">
+<img src="logo.jpg" style="width:38px;border-radius:50%;">
+<strong>Skin by Saif Clinic</strong>
 </div>
 
-<h3>Ultimate Skin Rejuvenation Facial</h3>
+<div class="nav-links">
+<a href="#about">About</a>
+<a href="#treatments">Treatments</a>
+<a href="#faq">FAQ</a>
+<a href="#contact">Contact</a>
+</div>
+
+</div>
+</div>
+
+<section class="container hero fade">
+
+<div>
+
+<h1>Advanced skin treatments in Sheffield.</h1>
 
 <p>
-A premium 90 minute treatment combining Hydrafacial and microneedling for the ultimate skin refresh.
-Includes consultation, cleanse, exfoliation, extractions where suitable, hydration infusion,
-facial massage, red light therapy and microneedling.
+A private clinic offering hydrafacial, microneedling and personalised skin consultations for acne, pigmentation and long-term skin confidence.
 </p>
 
-<div class="service-actions">
-<div class="price-book">
-<div class="pill featured">£130</div>
-<a class="book-inline" href="https://treatwellapp.page.link/HYpBb" target="_blank">Book now</a>
-</div>
-
-<div class="meta">
-<span>90 mins</span>
-<span>Hydrafacial + Microneedling</span>
-</div>
-</div>
-</div>
-
-
-<div class="service">
-<div class="service-image">
-<img src="IMG_4095.jpeg" alt="Microneedling treatment">
-</div>
-
-<h3>Advanced Microneedling</h3>
-
-<p>
-A collagen stimulating treatment targeting acne scars, pores, uneven texture
-and overall skin rejuvenation.
-</p>
-
-<div class="service-actions">
-<div class="price-book">
-<div class="pill">£70–£90</div>
-<a class="book-inline" href="https://treatwellapp.page.link/HYpBb" target="_blank">Book now</a>
-</div>
-
-<div class="meta">
-<span>60 mins</span>
-<span>Acne / texture / rejuvenation</span>
-</div>
-</div>
-</div>
-
-<div class="service">
-<div class="service-image">
-<img src="IMG_4096.jpeg" alt="Hydrafacial treatment">
-</div>
-
-<h3>Advanced Hydrafacial</h3>
-
-<p>
-Deep cleansing facial designed to remove congestion,
-hydrate the skin and restore glow.
-Includes facial massage, lymphatic drainage and red light therapy.
-</p>
-
-<div class="service-actions">
-<div class="price-book">
-<div class="pill">£100</div>
-<a class="book-inline" href="https://treatwellapp.page.link/HYpBb" target="_blank">Book now</a>
-</div>
-
-<div class="meta">
-<span>60 mins</span>
-<span>Hydration / glow</span>
-</div>
-</div>
-</div>
-
-
-<div class="service">
-<div class="service-image">
-<img src="IMG_4097.jpeg" alt="Dermaplaning facial">
-</div>
-
-<h3>Dermaplaning</h3>
-
-<p>
-Professional exfoliation removing dead skin build up and peach fuzz
-for smoother, brighter skin.
-</p>
-
-<div class="service-actions">
-<div class="price-book">
-<div class="pill">£20</div>
-<a class="book-inline" href="https://treatwellapp.page.link/HYpBb" target="_blank">Book now</a>
-</div>
-
-<div class="meta">
-<span>15 mins</span>
-<span>Instant glow</span>
-</div>
-</div>
-</div>
-
-<div class="service">
-<div class="service-image">
-<img src="IMG_4098.jpeg" alt="Free consultation">
-</div>
-
-<h3>Free Pre Treatment Consultation</h3>
-
-<p>
-A short consultation to review your skin concerns and recommend the
-most appropriate treatments.
-</p>
-
-<div class="service-actions">
-<div class="price-book">
-<div class="pill">Free</div>
-<a class="book-inline" href="https://treatwellapp.page.link/HYpBb" target="_blank">Book now</a>
-</div>
-
-<div class="meta">
-<span>15 mins</span>
-<span>Advice & suitability</span>
-</div>
-</div>
-</div>
-
-
-<div class="service">
-<div class="service-image">
-<img src="IMG_4099.jpeg" alt="New skin consultation">
-</div>
-
-<h3>New Client Skin Assessment</h3>
-
-<p>
-A full consultation reviewing skin concerns, skincare routine
-and treatment planning.
-</p>
-
-<div class="service-actions">
-<div class="price-book">
-<div class="pill">£45</div>
-<a class="book-inline" href="https://treatwellapp.page.link/HYpBb" target="_blank">Book now</a>
-</div>
-
-<div class="meta">
-<span>60 mins</span>
-<span>New clients</span>
-</div>
-</div>
-</div>
-
-<div class="service">
-<div class="service-image">
-<img src="IMG_4100.jpeg" alt="Return consultation">
-</div>
-
-<h3>Return Skin Assessment</h3>
-
-<p>
-Follow up appointment reviewing skin progress and refining
-your treatment plan.
-</p>
-
-<div class="service-actions">
-<div class="price-book">
-<div class="pill">£37.50</div>
-<a class="book-inline" href="https://treatwellapp.page.link/HYpBb" target="_blank">Book now</a>
-</div>
-
-<div class="meta">
-<span>60 mins</span>
-<span>Follow up</span>
-</div>
-</div>
-</div>
-
-
-<div class="service">
-<div class="service-image">
-<img src="IMG_4102.jpeg" alt="Deep cleansing facial">
-</div>
-
-<h3>Deep Cleansing Facial</h3>
-
-<p>
-Ideal for acne prone or congested skin with extractions
-and calming products.
-</p>
-
-<div class="service-actions">
-<div class="price-book">
-<div class="pill">£50</div>
-<a class="book-inline" href="https://treatwellapp.page.link/HYpBb" target="_blank">Book now</a>
-</div>
-
-<div class="meta">
-<span>45 mins</span>
-<span>Acne / congestion</span>
-</div>
-</div>
-</div>
-
-<div class="service">
-<div class="service-image">
-<img src="IMG_4103.jpeg" alt="Express facial">
-</div>
-
-<h3>Express Facial</h3>
-
-<p>
-A quick maintenance facial designed to refresh and hydrate the skin.
-</p>
-
-<div class="service-actions">
-<div class="price-book">
-<div class="pill">£30</div>
-<a class="book-inline" href="https://treatwellapp.page.link/HYpBb" target="_blank">Book now</a>
-</div>
-
-<div class="meta">
-<span>30 mins</span>
-<span>Glow treatment</span>
-</div>
-</div>
-</div>
-
-</div>
-</div>
-</section>
-
-<section class="section section-center reveal" id="contact">
-
-<div class="container">
-
-<h2 class="section-title">Book or get in touch</h2>
-
-<p class="section-sub">
-Book online or message via WhatsApp for enquiries.
-</p>
-
-<div class="cta-row">
+<div style="margin-top:24px;display:flex;gap:14px;flex-wrap:wrap;">
 
 <a class="btn btn-primary" href="https://treatwellapp.page.link/HYpBb" target="_blank">
-Book on Treatwell
+Book appointment
 </a>
 
 <a class="btn btn-instagram" href="https://instagram.com/skinbysaif" target="_blank">
@@ -1205,52 +343,13 @@ Facebook
 
 </div>
 
-<p style="margin-top:30px;">
-<strong>Email</strong><br>
-skinbysaif@gmail.com
-</p>
+</div>
 
-<p>
-<strong>Phone / WhatsApp</strong><br>
-01144387655
-</p>
-
-<p>
-<strong>Location</strong><br>
-Park Hill, Sheffield
-</p>
-
+<div class="hero-image">
+<img src="2F313773-5007-4400-915C-CC8FBB0AF2D1.png">
+<div class="hero-badge">
+Private clinic - Park Hill, Sheffield
+</div>
 </div>
 
 </section>
-
-
-<footer class="footer">
-<div class="container">
-© Skin by Saif Clinic - Sheffield
-</div>
-</footer>
-
-
-<script>
-
-const revealEls=document.querySelectorAll('.reveal');
-
-const revealObserver=new IntersectionObserver((entries)=>{
-
-entries.forEach((entry)=>{
-
-if(entry.isIntersecting){
-entry.target.classList.add('is-visible');
-}
-
-});
-
-});
-
-revealEls.forEach((el)=>revealObserver.observe(el));
-
-</script>
-
-</body>
-</html>
