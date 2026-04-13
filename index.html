@@ -29,6 +29,12 @@
       --radius:18px;
       --radius-lg:26px;
       --max:1140px;
+      --instagram-1:#feda75;
+      --instagram-2:#fa7e1e;
+      --instagram-3:#d62976;
+      --instagram-4:#962fbf;
+      --instagram-5:#4f5bd5;
+      --facebook:#1877f2;
     }
 
     *{box-sizing:border-box}
@@ -213,13 +219,27 @@
       box-shadow:0 10px 22px rgba(157,115,67,.22);
     }
 
+    .btn-instagram{
+      color:#fff;
+      background:linear-gradient(135deg, var(--instagram-1), var(--instagram-2), var(--instagram-3), var(--instagram-4), var(--instagram-5));
+      box-shadow:0 10px 22px rgba(214,41,118,.20);
+    }
+
+    .btn-facebook{
+      color:#fff;
+      background:linear-gradient(180deg, #2b86ff, var(--facebook));
+      box-shadow:0 10px 22px rgba(24,119,242,.20);
+    }
+
     .btn-secondary{
       background:#fff;
       color:var(--text);
       border-color:var(--line-soft);
     }
 
-    .btn-secondary svg{
+    .btn-secondary svg,
+    .btn-instagram svg,
+    .btn-facebook svg{
       flex-shrink:0;
     }
 
@@ -275,10 +295,12 @@
       background:rgba(255,255,255,.94);
       border:1px solid var(--line-soft);
       color:var(--text);
-      padding:12px 14px;
+      padding:10px 14px;
       border-radius:14px;
       box-shadow:var(--shadow);
       font-size:14px;
+      line-height:1.35;
+      max-width:320px;
     }
 
     .section{
@@ -315,6 +337,10 @@
 
     .gold-line.left{
       margin:0 0 20px;
+    }
+
+    .section-heading{
+      margin-bottom:28px;
     }
 
     .split{
@@ -410,6 +436,9 @@
       padding:22px;
       box-shadow:var(--shadow);
       text-align:left;
+      display:flex;
+      flex-direction:column;
+      gap:14px;
     }
 
     .service.featured{
@@ -422,7 +451,7 @@
       align-items:flex-start;
       justify-content:space-between;
       gap:14px;
-      margin-bottom:10px;
+      margin-bottom:0;
     }
 
     .service h3{
@@ -450,8 +479,40 @@
 
     .service p{
       color:var(--muted);
-      margin:0 0 14px;
+      margin:0;
       font-size:15px;
+    }
+
+    .service-actions{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:12px;
+      flex-wrap:wrap;
+      padding-top:14px;
+      border-top:1px solid var(--line-soft);
+    }
+
+    .price-book{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+
+    .book-inline{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:40px;
+      padding:0 16px;
+      border-radius:999px;
+      font-weight:700;
+      font-size:14px;
+      background:linear-gradient(180deg, #b98c57, #9d7343);
+      color:#fff;
+      box-shadow:0 8px 18px rgba(157,115,67,.18);
+      white-space:nowrap;
     }
 
     .meta{
@@ -459,8 +520,6 @@
       justify-content:space-between;
       gap:12px;
       flex-wrap:wrap;
-      padding-top:12px;
-      border-top:1px solid var(--line-soft);
       color:var(--muted);
       font-size:14px;
     }
@@ -811,13 +870,19 @@
       .location-copy{
         text-align:center;
       }
+
+      .service-actions,
+      .price-book,
+      .meta{
+        justify-content:center;
+      }
     }
   </style>
 </head>
 <body>
 
   <div class="announcement-bar">
-    Opening late April 2026 • Limited appointments now available
+    Opening late April 2026 - Limited appointments now available
   </div>
 
   <div class="topbar">
@@ -846,7 +911,7 @@
   <section class="hero">
     <div class="container hero-wrap">
       <div class="hero-copy">
-        <div class="eyebrow">Advanced facials • Personalised care • By appointment</div>
+        <div class="eyebrow">Advanced facials - Personalised care - By appointment</div>
         <h1>Advanced skin treatments in a calm, private Sheffield clinic.</h1>
         <p class="lead">
           Skin by Saif Clinic is a private skin clinic in Sheffield offering advanced facial treatments including microneedling, hydrafacial and personalised skincare consultations for acne, congestion, texture, pigmentation and long-term skin confidence.
@@ -854,7 +919,8 @@
 
         <div class="cta-row">
           <a class="btn btn-primary" href="https://treatwellapp.page.link/HYpBb" target="_blank" rel="noopener">Book on Treatwell</a>
-          <a class="btn btn-secondary" href="https://instagram.com/skinbysaif" target="_blank" rel="noopener">
+
+          <a class="btn btn-instagram" href="https://instagram.com/skinbysaif" target="_blank" rel="noopener">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
               <rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="2"/>
               <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/>
@@ -862,20 +928,27 @@
             </svg>
             Follow on Instagram
           </a>
+
+          <a class="btn btn-facebook" href="https://www.facebook.com/share/18F4UPGhCZ/?mibextid=wwXIfr" target="_blank" rel="noopener">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M14 8h3V4h-3c-2.6 0-4 1.5-4 4.3V11H7v4h3v5h4v-5h3.1l.9-4H14V8.6c0-.4.2-.6.6-.6Z" fill="currentColor"/>
+            </svg>
+            Facebook page
+          </a>
         </div>
 
         <div class="hero-points">
           <div class="point">
-            <strong>Microneedling</strong>
-            <span>From £70 to £90 depending on treatment level</span>
+            <strong>Advanced facial treatments</strong>
+            <span>Targeted treatments for acne, texture, pigmentation, congestion and glow</span>
           </div>
           <div class="point">
-            <strong>Ultimate Facial</strong>
-            <span>Hydrafacial + microneedling in one premium treatment</span>
+            <strong>Private one-to-one clinic</strong>
+            <span>Calm Park Hill setting with a personalised and thoughtful approach</span>
           </div>
           <div class="point">
-            <strong>Personalised consultations</strong>
-            <span>Tailored treatment plans and ongoing skin support</span>
+            <strong>Consultation-led care</strong>
+            <span>Tailored plans, treatment guidance and long-term skin support</span>
           </div>
         </div>
       </div>
@@ -888,46 +961,59 @@
   </section>
 
   <section class="section" id="about">
-    <div class="container split">
-      <div class="about-copy">
+    <div class="container">
+      <div class="section-heading about-copy">
         <div class="label">About the clinic</div>
         <h2 class="section-title">A more personal kind of skin clinic.</h2>
         <div class="gold-line left"></div>
-        <p>
-          Skin by Saif Clinic is a private Sheffield-based skin clinic offering advanced facials, microneedling, hydrafacial, dermaplaning and personalised skin consultations in a calm, carefully designed setting.
-        </p>
-        <p>
-          The clinic is built around thoughtful care, clean professional standards and treatments tailored to the person in front of you — not rushed, generic protocols. Whether your main concern is acne, congestion, dehydration, texture, pigmentation or overall skin confidence, every appointment is designed around real skin goals.
-        </p>
       </div>
 
-      <div class="photo">
-        <img src="IMG_3983.jpeg" alt="Professional skincare tools and products at Skin by Saif Clinic">
+      <div class="split">
+        <div class="about-copy">
+          <p>
+            Skin by Saif Clinic is built around the idea that great skin treatment should feel personal, considered and supportive from the very first appointment.
+          </p>
+          <p>
+            The clinic mission is to help clients feel more confident in their skin through honest guidance, tailored treatment planning and a calm, professional one-to-one experience.
+          </p>
+          <p>
+            Treatments are carefully selected to target common concerns like acne, congestion, dehydration, pigmentation, texture and overall skin rejuvenation, with every appointment adapted to the individual rather than a one-size-fits-all approach.
+          </p>
+        </div>
+
+        <div class="photo">
+          <img src="IMG_3983.jpeg" alt="Professional skincare tools and products at Skin by Saif Clinic">
+        </div>
       </div>
     </div>
   </section>
 
   <section class="section-sm" id="founder">
-    <div class="container founder-grid">
-      <div class="portrait-wrap">
-        <div class="portrait-photo">
-          <img src="IMG_4083.jpeg" alt="Saif, founder of Skin by Saif Clinic">
-        </div>
-      </div>
-
-      <div class="founder-copy">
+    <div class="container">
+      <div class="section-heading founder-copy">
         <div class="label">Meet your aesthetician</div>
         <h2 class="section-title">Built from lived experience, not just interest.</h2>
         <div class="gold-line left"></div>
-        <p>
-          Skin by Saif began from something deeply personal. After struggling with severe cystic acne and feeling self-conscious in my own skin, I know first-hand how much skin concerns can affect confidence, comfort and the way you carry yourself day to day.
-        </p>
-        <p>
-          That experience is a big part of why this clinic exists. I wanted to create a space that feels warm, professional and genuinely understanding — where clients feel listened to, supported and guided toward realistic, long-term improvement rather than quick fixes.
-        </p>
-        <p>
-          My approach combines personalised treatment planning, careful consultation, strong hygiene standards and a real respect for how personal skin journeys can be.
-        </p>
+      </div>
+
+      <div class="founder-grid">
+        <div class="portrait-wrap">
+          <div class="portrait-photo">
+            <img src="IMG_4083.jpeg" alt="Saif, founder of Skin by Saif Clinic">
+          </div>
+        </div>
+
+        <div class="founder-copy">
+          <p>
+            Skin by Saif began from something deeply personal. After struggling with severe cystic acne and feeling self-conscious in my own skin, I know first-hand how much skin concerns can affect confidence, comfort and the way you carry yourself day to day.
+          </p>
+          <p>
+            That experience is a big part of why this clinic exists. I wanted to create a space that feels warm, professional and genuinely understanding - where clients feel listened to, supported and guided toward realistic, long-term improvement rather than quick fixes.
+          </p>
+          <p>
+            My approach combines personalised treatment planning, careful consultation, strong hygiene standards and a real respect for how personal skin journeys can be.
+          </p>
+        </div>
       </div>
     </div>
   </section>
@@ -938,7 +1024,7 @@
       <h2 class="section-title">Professional, personal and results-focused.</h2>
       <div class="gold-line"></div>
       <p class="section-sub">
-        Every detail is intended to make the experience feel considered — from consultation and treatment suitability through to cleanliness, comfort and aftercare.
+        Every detail is intended to make the experience feel considered - from consultation and treatment suitability through to cleanliness, comfort and aftercare.
       </p>
 
       <div class="why-grid">
@@ -971,112 +1057,171 @@
         <div class="service featured">
           <div class="service-top">
             <h3>Ultimate Skin Rejuvenation Facial</h3>
-            <div class="pill featured">£130</div>
           </div>
           <p>
-            A premium 90-minute treatment combining Hydrafacial and microneedling for the ultimate skin refresh. Your appointment includes a free initial consultation, deep cleanse, exfoliation, extractions where suitable, hydration infusion, microneedling and finishing aftercare tailored to your skin goals.
+            A premium 90-minute treatment combining Hydrafacial and microneedling for the ultimate skin refresh. Your appointment includes a free pre-treatment consultation, deep cleanse, exfoliation, extractions where suitable, hydration infusion, facial massage, red light therapy, microneedling and finishing aftercare tailored to your skin goals. Targeted add-on infusions and actives may include polynucleotides, PDRN, niacinamide, peptides and collagen-supporting ingredients where appropriate.
           </p>
-          <div class="meta">
-            <span>90 mins</span>
-            <span>Hydrafacial + Microneedling + Free Consultation</span>
+          <div class="service-actions">
+            <div class="price-book">
+              <div class="pill featured">£130</div>
+              <a class="book-inline" href="https://treatwellapp.page.link/HYpBb" target="_blank" rel="noopener">Book now</a>
+            </div>
+            <div class="meta">
+              <span>90 mins</span>
+              <span>Hydrafacial + Microneedling + Free pre-treatment consultation</span>
+            </div>
           </div>
         </div>
 
         <div class="service">
           <div class="service-top">
             <h3>Advanced Microneedling</h3>
-            <div class="pill">From £70–£90</div>
           </div>
           <p>
-            A targeted collagen-stimulating treatment designed for acne scarring, enlarged pores, uneven texture and skin rejuvenation. Includes skin preparation, sterile microneedling treatment, calming finishing products and aftercare guidance, with treatment depth adjusted to your skin concern.
+            A targeted collagen-stimulating treatment designed for acne scarring, enlarged pores, uneven texture and skin rejuvenation. Includes free pre-treatment consultation, skin preparation, sterile microneedling treatment, calming finishing products and aftercare guidance, with treatment depth adjusted to your skin concern.
           </p>
-          <div class="meta">
-            <span>60 mins</span>
-            <span>Rejuvenation / Acne / Pigmentation</span>
+          <div class="service-actions">
+            <div class="price-book">
+              <div class="pill">From £70-£90</div>
+              <a class="book-inline" href="https://treatwellapp.page.link/HYpBb" target="_blank" rel="noopener">Book now</a>
+            </div>
+            <div class="meta">
+              <span>60 mins</span>
+              <span>Rejuvenation / Acne / Pigmentation</span>
+            </div>
           </div>
         </div>
 
         <div class="service">
           <div class="service-top">
             <h3>Advanced Hydrafacial</h3>
-            <div class="pill">£100</div>
           </div>
           <p>
-            A deep-cleansing treatment designed to leave skin clearer, fresher and more radiant. Includes double cleanse, gentle exfoliation, extractions where suitable, hydration infusion, cooling globes, lymphatic drainage and LED to finish.
+            A deep-cleansing treatment designed to leave skin clearer, fresher and more radiant. Includes free pre-treatment consultation, double cleanse, gentle exfoliation, extractions where suitable, hydration infusion, facial massage, lymphatic drainage and red light therapy to finish. Targeted skin boosters may include polynucleotides, PDRN, niacinamide, peptides and collagen-supporting ingredients depending on your skin goals.
           </p>
-          <div class="meta">
-            <span>60 mins</span>
-            <span>Hydration / Congestion / Glow</span>
+          <div class="service-actions">
+            <div class="price-book">
+              <div class="pill">£100</div>
+              <a class="book-inline" href="https://treatwellapp.page.link/HYpBb" target="_blank" rel="noopener">Book now</a>
+            </div>
+            <div class="meta">
+              <span>60 mins</span>
+              <span>Hydration / Congestion / Glow</span>
+            </div>
           </div>
         </div>
 
         <div class="service">
           <div class="service-top">
             <h3>Dermaplaning</h3>
-            <div class="pill">£20</div>
           </div>
           <p>
-            A professional exfoliating treatment that removes dead skin build-up and peach fuzz for a smoother, brighter finish. Includes cleanse, skin preparation, dermaplaning and hydrating finishing products.
+            A professional exfoliating treatment that removes dead skin build-up and peach fuzz for a smoother, brighter finish. Includes free pre-treatment consultation, cleanse, skin preparation, dermaplaning and hydrating finishing products.
           </p>
-          <div class="meta">
-            <span>15 mins</span>
-            <span>Instant smooth finish</span>
+          <div class="service-actions">
+            <div class="price-book">
+              <div class="pill">£20</div>
+              <a class="book-inline" href="https://treatwellapp.page.link/HYpBb" target="_blank" rel="noopener">Book now</a>
+            </div>
+            <div class="meta">
+              <span>15 mins</span>
+              <span>Instant smooth finish</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="service">
+          <div class="service-top">
+            <h3>Free Pre-Treatment Consultation</h3>
+          </div>
+          <p>
+            A quick consultation for clients who want help choosing the right facial or treatment before booking. Ideal if you are unsure where to start and want guidance on suitability, next steps and what may work best for your skin.
+          </p>
+          <div class="service-actions">
+            <div class="price-book">
+              <div class="pill">Free</div>
+              <a class="book-inline" href="https://treatwellapp.page.link/HYpBb" target="_blank" rel="noopener">Book now</a>
+            </div>
+            <div class="meta">
+              <span>15 mins</span>
+              <span>Suitability / Treatment guidance</span>
+            </div>
           </div>
         </div>
 
         <div class="service">
           <div class="service-top">
             <h3>New Client Skin Assessment</h3>
-            <div class="pill">£45</div>
           </div>
           <p>
             A detailed initial consultation to review your skin concerns, treatment suitability, current routine and next steps. Includes personalised recommendations and guidance on the treatments or skincare options best suited to your goals.
           </p>
-          <div class="meta">
-            <span>60 mins</span>
-            <span>For first-time clients</span>
+          <div class="service-actions">
+            <div class="price-book">
+              <div class="pill">£45</div>
+              <a class="book-inline" href="https://treatwellapp.page.link/HYpBb" target="_blank" rel="noopener">Book now</a>
+            </div>
+            <div class="meta">
+              <span>60 mins</span>
+              <span>For first-time clients</span>
+            </div>
           </div>
         </div>
 
         <div class="service">
           <div class="service-top">
             <h3>Return Skin Assessment</h3>
-            <div class="pill">£37.50</div>
           </div>
           <p>
             A follow-up appointment to assess progress, review how your skin has been responding and refine your treatment plan or skincare approach where needed.
           </p>
-          <div class="meta">
-            <span>60 mins</span>
-            <span>Ongoing support</span>
+          <div class="service-actions">
+            <div class="price-book">
+              <div class="pill">£37.50</div>
+              <a class="book-inline" href="https://treatwellapp.page.link/HYpBb" target="_blank" rel="noopener">Book now</a>
+            </div>
+            <div class="meta">
+              <span>60 mins</span>
+              <span>Ongoing support</span>
+            </div>
           </div>
         </div>
 
         <div class="service">
           <div class="service-top">
             <h3>Deep Cleansing Facial</h3>
-            <div class="pill">£50</div>
           </div>
           <p>
-            Ideal for acne-prone, oily or congested skin. Includes cleanse, exfoliation, steam or softening prep where suitable, extractions, calming products and hydration to help rebalance the skin.
+            Ideal for acne-prone, oily or congested skin. Includes free pre-treatment consultation, cleanse, exfoliation, steam or softening prep where suitable, extractions, calming products and hydration to help rebalance the skin.
           </p>
-          <div class="meta">
-            <span>45 mins</span>
-            <span>Acne / Oily skin / Congestion</span>
+          <div class="service-actions">
+            <div class="price-book">
+              <div class="pill">£50</div>
+              <a class="book-inline" href="https://treatwellapp.page.link/HYpBb" target="_blank" rel="noopener">Book now</a>
+            </div>
+            <div class="meta">
+              <span>45 mins</span>
+              <span>Acne / Oily skin / Congestion</span>
+            </div>
           </div>
         </div>
 
         <div class="service">
           <div class="service-top">
             <h3>Express Facial</h3>
-            <div class="pill">£30</div>
           </div>
           <p>
-            A shorter maintenance treatment designed to refresh and brighten the skin. Includes cleanse, light exfoliation, hydration and finishing products for an instant glow.
+            A shorter maintenance treatment designed to refresh and brighten the skin. Includes free pre-treatment consultation, cleanse, light exfoliation, hydration and finishing products for an instant glow.
           </p>
-          <div class="meta">
-            <span>30 mins</span>
-            <span>Maintenance / Glow / Hydration</span>
+          <div class="service-actions">
+            <div class="price-book">
+              <div class="pill">£30</div>
+              <a class="book-inline" href="https://treatwellapp.page.link/HYpBb" target="_blank" rel="noopener">Book now</a>
+            </div>
+            <div class="meta">
+              <span>30 mins</span>
+              <span>Maintenance / Glow / Hydration</span>
+            </div>
           </div>
         </div>
       </div>
@@ -1084,26 +1229,31 @@
   </section>
 
   <section class="section" id="results">
-    <div class="container results-grid">
-      <div>
+    <div class="container">
+      <div class="section-heading" style="text-align:left;">
         <div class="label">Results</div>
         <h2 class="section-title">Real progress takes consistency.</h2>
         <div class="gold-line left"></div>
-        <p class="section-sub" style="margin:0; max-width:56ch;">
-          The right treatment plan, appropriate homecare and consistency over time can make a visible difference to confidence and skin health.
-        </p>
-
-        <div class="focus-list">
-          <div class="focus-item"><div class="focus-dot">•</div><div>Acne and congestion</div></div>
-          <div class="focus-item"><div class="focus-dot">•</div><div>Pigmentation and uneven tone</div></div>
-          <div class="focus-item"><div class="focus-dot">•</div><div>Texture, pores and acne scarring</div></div>
-          <div class="focus-item"><div class="focus-dot">•</div><div>Dehydration, dullness and glow</div></div>
-          <div class="focus-item"><div class="focus-dot">•</div><div>Overall rejuvenation and skin confidence</div></div>
-        </div>
       </div>
 
-      <div class="photo">
-        <img src="F192D0D2-51C6-4EA8-99DB-6B262D1D05E0.png" alt="Before and after acne skin journey results">
+      <div class="results-grid">
+        <div>
+          <p class="section-sub" style="margin:0; max-width:56ch; text-align:left;">
+            The right treatment plan, appropriate homecare and consistency over time can make a visible difference to confidence and skin health.
+          </p>
+
+          <div class="focus-list">
+            <div class="focus-item"><div class="focus-dot">•</div><div>Acne and congestion</div></div>
+            <div class="focus-item"><div class="focus-dot">•</div><div>Pigmentation and uneven tone</div></div>
+            <div class="focus-item"><div class="focus-dot">•</div><div>Texture, pores and acne scarring</div></div>
+            <div class="focus-item"><div class="focus-dot">•</div><div>Dehydration, dullness and glow</div></div>
+            <div class="focus-item"><div class="focus-dot">•</div><div>Overall rejuvenation and skin confidence</div></div>
+          </div>
+        </div>
+
+        <div class="photo">
+          <img src="F192D0D2-51C6-4EA8-99DB-6B262D1D05E0.png" alt="Before and after acne skin journey results">
+        </div>
       </div>
     </div>
   </section>
@@ -1119,45 +1269,44 @@
 
       <div class="gallery-grid">
         <div class="photo">
-          <img src="IMG_3970.jpeg" alt="Park Hill building exterior">
+          <img src="IMG_3974.jpeg" alt="View from the clinic">
         </div>
         <div class="gallery-stack">
           <div class="photo">
-            <img src="IMG_3974.jpeg" alt="View from the clinic">
-          </div>
-          <div class="photo">
             <img src="IMG_3976.jpeg" alt="Interior clinic space">
           </div>
-        </div>
-      </div>
-
-      <div class="single-photo-wrap">
-        <div class="photo">
-          <img src="IMG_3973.jpeg" alt="Clinic balcony and surrounding view">
+          <div class="photo">
+            <img src="IMG_3973.jpeg" alt="Clinic balcony and surrounding view">
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <section class="section-sm">
-    <div class="container split">
-      <div class="location-copy">
+    <div class="container">
+      <div class="section-heading location-copy">
         <div class="label">Getting here</div>
         <h2 class="section-title">Easy to reach from across Sheffield.</h2>
         <div class="gold-line left"></div>
-        <p>
-          Skin by Saif Clinic is based in Park Hill, Sheffield, in a central location that is convenient for clients travelling from the city centre and surrounding Sheffield areas.
-        </p>
-        <p>
-          Park Hill is well known and easy to find, making the clinic simple to access whether you are arriving on foot, by taxi or from nearby central transport links.
-        </p>
-        <p>
-          Once booked, full arrival details can be provided to help make your visit as smooth and stress-free as possible.
-        </p>
       </div>
 
-      <div class="photo">
-        <img src="IMG_3970.jpeg" alt="Park Hill Sheffield location">
+      <div class="split">
+        <div class="location-copy">
+          <p>
+            Skin by Saif Clinic is based in Park Hill, Sheffield, in a central location that is convenient for clients travelling from the city centre and surrounding Sheffield areas.
+          </p>
+          <p>
+            Park Hill is well known and easy to find, making the clinic simple to access whether you are arriving on foot, by taxi or from nearby central transport links.
+          </p>
+          <p>
+            Once booked, full arrival details can be provided to help make your visit as smooth and stress-free as possible.
+          </p>
+        </div>
+
+        <div class="photo">
+          <img src="IMG_3970.jpeg" alt="Park Hill Sheffield location">
+        </div>
       </div>
     </div>
   </section>
@@ -1196,12 +1345,12 @@
       <div class="faq-grid">
         <details>
           <summary>How do I know which treatment is right for me?</summary>
-          <p>New clients can begin with a skin assessment so your concerns, routine and treatment suitability can be reviewed before building the most appropriate plan.</p>
+          <p>New clients can begin with a free pre-treatment consultation or a full skin assessment so your concerns, routine and treatment suitability can be reviewed before building the most appropriate plan.</p>
         </details>
 
         <details>
           <summary>What is the Ultimate Skin Rejuvenation Facial?</summary>
-          <p>This is a premium combination treatment that brings together Hydrafacial and microneedling in one appointment to deeply cleanse, hydrate, refresh and support skin rejuvenation, with a free initial consultation included.</p>
+          <p>This is a premium combination treatment that brings together Hydrafacial and microneedling in one appointment to deeply cleanse, hydrate, refresh and support skin rejuvenation, with facial massage, red light therapy and a free pre-treatment consultation included.</p>
         </details>
 
         <details>
@@ -1216,7 +1365,7 @@
 
         <details>
           <summary>Do I need a consultation before treatment?</summary>
-          <p>Some treatments may require consultation or suitability checks beforehand. New clients are encouraged to book a skin assessment if they are unsure where to start.</p>
+          <p>Some treatments may require consultation or suitability checks beforehand. New clients are encouraged to book a free pre-treatment consultation or skin assessment if they are unsure where to start.</p>
         </details>
 
         <details>
@@ -1241,7 +1390,7 @@
 
         <details>
           <summary>How do I book?</summary>
-          <p>Appointments can be booked online through Treatwell. You can also follow along on Instagram for updates, results and clinic information.</p>
+          <p>Appointments can be booked online through Treatwell. You can also follow along on Instagram or Facebook for updates, results and clinic information.</p>
         </details>
       </div>
     </div>
@@ -1253,7 +1402,7 @@
       <h2 class="section-title" style="text-align:center;">Ready to start your skin journey?</h2>
       <div class="gold-line"></div>
       <p class="section-sub" style="text-align:center;">
-        Book online, get in touch or follow along on Instagram for updates, treatments and results.
+        Book online, get in touch or follow along on Instagram and Facebook for updates, treatments and results.
       </p>
 
       <div class="contact-grid">
@@ -1265,13 +1414,21 @@
 
           <div class="cta-row">
             <a class="btn btn-primary" href="https://treatwellapp.page.link/HYpBb" target="_blank" rel="noopener">Book on Treatwell</a>
-            <a class="btn btn-secondary" href="https://instagram.com/skinbysaif" target="_blank" rel="noopener">
+
+            <a class="btn btn-instagram" href="https://instagram.com/skinbysaif" target="_blank" rel="noopener">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                 <rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="2"/>
                 <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/>
                 <circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/>
               </svg>
-              Follow on Instagram
+              Instagram
+            </a>
+
+            <a class="btn btn-facebook" href="https://www.facebook.com/share/18F4UPGhCZ/?mibextid=wwXIfr" target="_blank" rel="noopener">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M14 8h3V4h-3c-2.6 0-4 1.5-4 4.3V11H7v4h3v5h4v-5h3.1l.9-4H14V8.6c0-.4.2-.6.6-.6Z" fill="currentColor"/>
+              </svg>
+              Facebook
             </a>
           </div>
         </div>
@@ -1288,6 +1445,15 @@
                 </svg>
               </div>
               <div>skinbysaif@gmail.com</div>
+            </div>
+
+            <div class="contact-item">
+              <div class="icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                  <path d="M6.6 10.8c1.8 3.6 3 4.8 6.6 6.6l2.2-2.2c.3-.3.8-.4 1.2-.3 1 .3 2 .4 3 .4.7 0 1.2.5 1.2 1.2V20c0 .7-.5 1.2-1.2 1.2C10.2 21.2 2.8 13.8 2.8 4.4c0-.7.5-1.2 1.2-1.2H7.5c.7 0 1.2.5 1.2 1.2 0 1 .1 2 .4 3 .1.4 0 .9-.3 1.2l-2.2 2.2Z" stroke="currentColor" stroke-width="1.8"/>
+                </svg>
+              </div>
+              <div>01144387655 - WhatsApp Business</div>
             </div>
 
             <div class="contact-item">
@@ -1326,7 +1492,7 @@
         <p><strong>Appointments:</strong> All appointments are subject to availability and may require prior consultation or suitability assessment depending on the treatment booked.</p>
         <p><strong>Consultation and suitability:</strong> Treatments are only carried out where considered appropriate. A treatment may be postponed, amended or declined if it is not suitable on the day.</p>
         <p><strong>Arrival:</strong> Please arrive on time for your appointment. Late arrival may reduce treatment time and, in some cases, may require the appointment to be rescheduled.</p>
-        <p><strong>Cancellations and rescheduling:</strong> At least 48 hours’ notice is requested where possible. Late cancellations or missed appointments may be charged in line with the booking platform policy.</p>
+        <p><strong>Cancellations and rescheduling:</strong> At least 48 hours' notice is requested where possible. Late cancellations or missed appointments may be charged in line with the booking platform policy.</p>
         <p><strong>Results:</strong> Individual results vary. No specific outcome can be guaranteed, as skin response differs from person to person and depends on factors such as homecare, consistency and skin history.</p>
         <p><strong>Courses and offers:</strong> Discounted offers, codes, NHS or Blue Light promotions and treatment course pricing may be withdrawn or amended at any time. Offers may not be combined unless stated otherwise.</p>
         <p><strong>Medical disclosure:</strong> Clients must disclose relevant medical conditions, allergies, medication and recent treatments before treatment. Failure to do so may affect treatment suitability and outcomes.</p>
@@ -1338,7 +1504,7 @@
 
   <div class="footer">
     <div class="container">
-      © Skin by Saif Clinic • Sheffield • Advanced skin treatments by appointment
+      © Skin by Saif Clinic - Sheffield - Advanced skin treatments by appointment
     </div>
   </div>
 
