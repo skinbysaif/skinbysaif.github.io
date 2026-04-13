@@ -13,6 +13,30 @@
   <meta property="og:type" content="website" />
   <meta property="og:image" content="logo.jpg" />
 
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"BeautySalon",
+    "name":"Skin by Saif Clinic",
+    "image":"logo.jpg",
+    "url":"https://skinbysaif.github.io/",
+    "telephone":"+44 1144387655",
+    "email":"skinbysaif@gmail.com",
+    "priceRange":"£20-£130",
+    "address":{
+      "@type":"PostalAddress",
+      "addressLocality":"Sheffield",
+      "addressRegion":"South Yorkshire",
+      "addressCountry":"GB"
+    },
+    "sameAs":[
+      "https://instagram.com/skinbysaif",
+      "https://www.facebook.com/share/18F4UPGhCZ/?mibextid=wwXIfr"
+    ],
+    "description":"Private Sheffield skin clinic offering advanced facials, microneedling, hydrafacial, dermaplaning and personalised skin consultations."
+  }
+  </script>
+
   <style>
     :root{
       --bg:#fbf8f4;
@@ -26,6 +50,7 @@
       --line:rgba(170,127,75,.16);
       --line-soft:rgba(36,31,28,.07);
       --shadow:0 12px 30px rgba(20,16,12,.055);
+      --shadow-strong:0 18px 42px rgba(20,16,12,.08);
       --radius:18px;
       --radius-lg:26px;
       --max:1140px;
@@ -35,6 +60,7 @@
       --instagram-4:#962fbf;
       --instagram-5:#4f5bd5;
       --facebook:#1877f2;
+      --lux-gradient:linear-gradient(135deg, rgba(255,255,255,.96), rgba(247,241,234,.92));
     }
 
     *{box-sizing:border-box}
@@ -177,6 +203,7 @@
       line-height:1.03;
       margin:0 0 16px;
       max-width:11ch;
+      text-wrap:balance;
     }
 
     .lead{
@@ -184,6 +211,7 @@
       color:var(--muted);
       max-width:58ch;
       margin:0 0 24px;
+      text-wrap:pretty;
     }
 
     .cta-row{
@@ -205,12 +233,18 @@
       border-radius:999px;
       font-weight:700;
       font-size:15px;
-      transition:.2s ease;
+      transition:transform .22s ease, box-shadow .22s ease, border-color .22s ease;
       border:1px solid transparent;
     }
 
     .btn:hover{
-      transform:translateY(-1px);
+      transform:translateY(-2px);
+    }
+
+    .btn svg{
+      width:18px;
+      height:18px;
+      flex-shrink:0;
     }
 
     .btn-primary{
@@ -237,12 +271,6 @@
       border-color:var(--line-soft);
     }
 
-    .btn-secondary svg,
-    .btn-instagram svg,
-    .btn-facebook svg{
-      flex-shrink:0;
-    }
-
     .hero-points{
       display:grid;
       grid-template-columns:repeat(3, minmax(0,1fr));
@@ -257,6 +285,12 @@
       padding:16px 14px;
       box-shadow:var(--shadow);
       text-align:center;
+      transition:transform .28s ease, box-shadow .28s ease;
+    }
+
+    .point:hover{
+      transform:translateY(-4px);
+      box-shadow:var(--shadow-strong);
     }
 
     .point strong{
@@ -277,7 +311,7 @@
       min-height:600px;
       border-radius:var(--radius-lg);
       overflow:hidden;
-      box-shadow:var(--shadow);
+      box-shadow:var(--shadow-strong);
       border:1px solid var(--line-soft);
       background:#fff;
     }
@@ -292,15 +326,16 @@
       position:absolute;
       left:18px;
       bottom:18px;
-      background:rgba(255,255,255,.94);
+      background:rgba(255,255,255,.96);
       border:1px solid var(--line-soft);
       color:var(--text);
       padding:10px 14px;
       border-radius:14px;
       box-shadow:var(--shadow);
       font-size:14px;
-      line-height:1.35;
-      max-width:320px;
+      line-height:1.3;
+      max-width:300px;
+      backdrop-filter:blur(8px);
     }
 
     .section{
@@ -319,12 +354,14 @@
       font-size:clamp(30px, 4vw, 46px);
       line-height:1.08;
       margin:0 0 10px;
+      text-wrap:balance;
     }
 
     .section-sub{
       color:var(--muted);
       max-width:64ch;
       margin:0 auto;
+      text-wrap:pretty;
     }
 
     .gold-line{
@@ -355,7 +392,13 @@
       overflow:hidden;
       background:#fff;
       border:1px solid var(--line-soft);
-      box-shadow:var(--shadow);
+      box-shadow:var(--shadow-strong);
+      transition:transform .28s ease, box-shadow .28s ease;
+    }
+
+    .photo:hover{
+      transform:translateY(-4px);
+      box-shadow:0 20px 46px rgba(20,16,12,.10);
     }
 
     .photo img{
@@ -397,7 +440,13 @@
       overflow:hidden;
       background:#fff;
       border:1px solid var(--line-soft);
-      box-shadow:var(--shadow);
+      box-shadow:var(--shadow-strong);
+      transition:transform .28s ease, box-shadow .28s ease;
+    }
+
+    .portrait-photo:hover{
+      transform:translateY(-4px);
+      box-shadow:0 20px 46px rgba(20,16,12,.10);
     }
 
     .portrait-photo img{
@@ -421,8 +470,7 @@
       text-transform:uppercase;
       margin-bottom:14px;
     }
-
-    .services{
+        .services{
       display:grid;
       grid-template-columns:repeat(2, minmax(0,1fr));
       gap:18px;
@@ -430,7 +478,7 @@
     }
 
     .service{
-      background:#fff;
+      background:var(--lux-gradient);
       border:1px solid var(--line-soft);
       border-radius:18px;
       padding:22px;
@@ -439,11 +487,38 @@
       display:flex;
       flex-direction:column;
       gap:14px;
+      transition:transform .28s ease, box-shadow .28s ease, border-color .28s ease;
+    }
+
+    .service:hover{
+      transform:translateY(-4px);
+      box-shadow:var(--shadow-strong);
     }
 
     .service.featured{
       border:1px solid rgba(170,127,75,.28);
       box-shadow:0 18px 40px rgba(157,115,67,.09);
+    }
+
+    .service-image{
+      position:relative;
+      overflow:hidden;
+      border-radius:16px;
+      aspect-ratio:16 / 10;
+      background:var(--surface-soft);
+      border:1px solid var(--line-soft);
+      margin-bottom:2px;
+    }
+
+    .service-image img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      transition:transform .45s ease;
+    }
+
+    .service:hover .service-image img{
+      transform:scale(1.04);
     }
 
     .service-top{
@@ -513,6 +588,12 @@
       color:#fff;
       box-shadow:0 8px 18px rgba(157,115,67,.18);
       white-space:nowrap;
+      transition:transform .22s ease, box-shadow .22s ease;
+    }
+
+    .book-inline:hover{
+      transform:translateY(-2px);
+      box-shadow:0 12px 24px rgba(157,115,67,.24);
     }
 
     .meta{
@@ -538,6 +619,12 @@
       padding:24px;
       box-shadow:var(--shadow);
       text-align:left;
+      transition:transform .28s ease, box-shadow .28s ease;
+    }
+
+    .why-card:hover{
+      transform:translateY(-4px);
+      box-shadow:var(--shadow-strong);
     }
 
     .why-card h3{
@@ -620,6 +707,12 @@
       padding:26px;
       box-shadow:var(--shadow);
       text-align:center;
+      transition:transform .28s ease, box-shadow .28s ease;
+    }
+
+    .offer-card:hover{
+      transform:translateY(-4px);
+      box-shadow:var(--shadow-strong);
     }
 
     .offer-card h3{
@@ -658,19 +751,43 @@
       border-radius:16px;
       padding:18px 20px;
       box-shadow:var(--shadow);
+      overflow:hidden;
+      transition:transform .28s ease, box-shadow .28s ease;
+    }
+
+    details:hover{
+      transform:translateY(-2px);
+      box-shadow:var(--shadow-strong);
     }
 
     summary{
       cursor:pointer;
       font-weight:700;
       list-style:none;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:18px;
     }
 
     summary::-webkit-details-marker{display:none}
 
+    summary::after{
+      content:"+";
+      flex-shrink:0;
+      font-size:22px;
+      line-height:1;
+      color:var(--accent-dark);
+    }
+
+    details[open] summary::after{
+      content:"−";
+    }
+
     details p{
       color:var(--muted);
       margin:12px 0 0;
+      max-width:70ch;
     }
 
     .contact-grid{
@@ -687,6 +804,12 @@
       border-radius:20px;
       padding:28px;
       box-shadow:var(--shadow);
+      transition:transform .28s ease, box-shadow .28s ease;
+    }
+
+    .contact-panel:hover{
+      transform:translateY(-4px);
+      box-shadow:var(--shadow-strong);
     }
 
     .contact-panel.center{
@@ -735,6 +858,12 @@
       box-shadow:var(--shadow);
       margin-top:28px;
       text-align:left;
+      transition:transform .28s ease, box-shadow .28s ease;
+    }
+
+    .tc-box:hover{
+      transform:translateY(-4px);
+      box-shadow:var(--shadow-strong);
     }
 
     .tc-box h3{
@@ -757,6 +886,43 @@
       text-align:center;
       color:var(--muted);
       font-size:14px;
+    }
+
+    .reveal{
+      opacity:0;
+      transform:translateY(24px);
+      transition:opacity .8s ease, transform .8s ease;
+      will-change:opacity, transform;
+    }
+
+    .reveal.is-visible{
+      opacity:1;
+      transform:translateY(0);
+    }
+
+    @media (prefers-reduced-motion: reduce){
+      .reveal{
+        opacity:1;
+        transform:none;
+        transition:none;
+      }
+
+      .service,
+      .why-card,
+      .offer-card,
+      .contact-panel,
+      .tc-box,
+      .photo,
+      details,
+      .point,
+      .btn,
+      .book-inline{
+        transition:none;
+      }
+
+      html{
+        scroll-behavior:auto;
+      }
     }
 
     @media (max-width: 980px){
@@ -798,6 +964,14 @@
     }
 
     @media (max-width: 760px){
+      body{
+        line-height:1.58;
+      }
+
+      .container{
+        width:min(var(--max), calc(100% - 22px));
+      }
+
       .announcement-bar{
         font-size:12px;
         padding:9px 14px;
@@ -807,6 +981,8 @@
         flex-direction:column;
         align-items:center;
         text-align:center;
+        gap:14px;
+        padding:12px 0;
       }
 
       .brand{
@@ -819,15 +995,26 @@
 
       .nav-links{
         justify-content:center;
+        gap:12px;
+        font-size:12px;
       }
 
       .hero{
-        padding-top:36px;
+        padding-top:28px;
+        padding-bottom:18px;
+      }
+
+      .hero-wrap{
+        gap:22px;
       }
 
       .section,
       .section-sm{
-        padding:46px 0;
+        padding:38px 0;
+      }
+
+      .section-heading{
+        margin-bottom:20px;
       }
 
       .service-top{
@@ -876,6 +1063,52 @@
       .meta{
         justify-content:center;
       }
+
+      .hero-image{
+        min-height:320px;
+      }
+
+      .hero-badge{
+        left:12px;
+        right:12px;
+        bottom:12px;
+        max-width:none;
+        font-size:13px;
+        padding:10px 12px;
+      }
+
+      .btn{
+        min-height:46px;
+        padding:0 16px;
+        font-size:14px;
+      }
+
+      .services,
+      .why-grid,
+      .offer-grid,
+      .contact-grid,
+      .faq-grid,
+      .focus-list{
+        gap:14px;
+      }
+
+      .service{
+        padding:18px;
+      }
+
+      .contact-panel,
+      .tc-box,
+      .offer-card,
+      .why-card{
+        padding:22px;
+      }
+
+      .gallery-grid,
+      .split,
+      .founder-grid,
+      .results-grid{
+        gap:20px;
+      }
     }
   </style>
 </head>
@@ -908,7 +1141,7 @@
     </div>
   </div>
 
-  <section class="hero">
+  <section class="hero reveal">
     <div class="container hero-wrap">
       <div class="hero-copy">
         <div class="eyebrow">Advanced facials - Personalised care - By appointment</div>
@@ -921,19 +1154,19 @@
           <a class="btn btn-primary" href="https://treatwellapp.page.link/HYpBb" target="_blank" rel="noopener">Book on Treatwell</a>
 
           <a class="btn btn-instagram" href="https://instagram.com/skinbysaif" target="_blank" rel="noopener">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
               <rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="2"/>
               <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/>
               <circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/>
             </svg>
-            Follow on Instagram
+            Instagram
           </a>
 
           <a class="btn btn-facebook" href="https://www.facebook.com/share/18F4UPGhCZ/?mibextid=wwXIfr" target="_blank" rel="noopener">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
               <path d="M14 8h3V4h-3c-2.6 0-4 1.5-4 4.3V11H7v4h3v5h4v-5h3.1l.9-4H14V8.6c0-.4.2-.6.6-.6Z" fill="currentColor"/>
             </svg>
-            Facebook page
+            Facebook
           </a>
         </div>
 
@@ -960,7 +1193,7 @@
     </div>
   </section>
 
-  <section class="section" id="about">
+  <section class="section reveal" id="about">
     <div class="container">
       <div class="section-heading about-copy">
         <div class="label">About the clinic</div>
@@ -987,526 +1220,4 @@
       </div>
     </div>
   </section>
-
-  <section class="section-sm" id="founder">
-    <div class="container">
-      <div class="section-heading founder-copy">
-        <div class="label">Meet your aesthetician</div>
-        <h2 class="section-title">Built from lived experience, not just interest.</h2>
-        <div class="gold-line left"></div>
-      </div>
-
-      <div class="founder-grid">
-        <div class="portrait-wrap">
-          <div class="portrait-photo">
-            <img src="IMG_4083.jpeg" alt="Saif, founder of Skin by Saif Clinic">
-          </div>
-        </div>
-
-        <div class="founder-copy">
-          <p>
-            Skin by Saif began from something deeply personal. After struggling with severe cystic acne and feeling self-conscious in my own skin, I know first-hand how much skin concerns can affect confidence, comfort and the way you carry yourself day to day.
-          </p>
-          <p>
-            That experience is a big part of why this clinic exists. I wanted to create a space that feels warm, professional and genuinely understanding - where clients feel listened to, supported and guided toward realistic, long-term improvement rather than quick fixes.
-          </p>
-          <p>
-            My approach combines personalised treatment planning, careful consultation, strong hygiene standards and a real respect for how personal skin journeys can be.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section section-center">
-    <div class="container">
-      <div class="label">Why clients choose Skin by Saif</div>
-      <h2 class="section-title">Professional, personal and results-focused.</h2>
-      <div class="gold-line"></div>
-      <p class="section-sub">
-        Every detail is intended to make the experience feel considered - from consultation and treatment suitability through to cleanliness, comfort and aftercare.
-      </p>
-
-      <div class="why-grid">
-        <div class="why-card">
-          <h3>Clean professional standards</h3>
-          <p>Strong hygiene, careful preparation and a treatment setup designed to feel safe, polished and professional from start to finish.</p>
-        </div>
-        <div class="why-card">
-          <h3>Tailored skin plans</h3>
-          <p>Treatments are adjusted around your skin condition, routine, sensitivity, goals and progress rather than using the same approach for everyone.</p>
-        </div>
-        <div class="why-card">
-          <h3>Private, calm environment</h3>
-          <p>A welcoming one-to-one setting where clients can feel comfortable discussing their concerns and building confidence in their skin.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section section-center" id="treatments">
-    <div class="container">
-      <div class="label">Treatments</div>
-      <h2 class="section-title">A curated treatment menu for real skin concerns.</h2>
-      <div class="gold-line"></div>
-      <p class="section-sub">
-        Focused on acne, congestion, dehydration, uneven tone, scarring, texture and overall skin rejuvenation.
-      </p>
-
-      <div class="services">
-        <div class="service featured">
-          <div class="service-top">
-            <h3>Ultimate Skin Rejuvenation Facial</h3>
-          </div>
-          <p>
-            A premium 90-minute treatment combining Hydrafacial and microneedling for the ultimate skin refresh. Your appointment includes a free pre-treatment consultation, deep cleanse, exfoliation, extractions where suitable, hydration infusion, facial massage, red light therapy, microneedling and finishing aftercare tailored to your skin goals. Targeted add-on infusions and actives may include polynucleotides, PDRN, niacinamide, peptides and collagen-supporting ingredients where appropriate.
-          </p>
-          <div class="service-actions">
-            <div class="price-book">
-              <div class="pill featured">£130</div>
-              <a class="book-inline" href="https://treatwellapp.page.link/HYpBb" target="_blank" rel="noopener">Book now</a>
-            </div>
-            <div class="meta">
-              <span>90 mins</span>
-              <span>Hydrafacial + Microneedling + Free pre-treatment consultation</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="service">
-          <div class="service-top">
-            <h3>Advanced Microneedling</h3>
-          </div>
-          <p>
-            A targeted collagen-stimulating treatment designed for acne scarring, enlarged pores, uneven texture and skin rejuvenation. Includes free pre-treatment consultation, skin preparation, sterile microneedling treatment, calming finishing products and aftercare guidance, with treatment depth adjusted to your skin concern.
-          </p>
-          <div class="service-actions">
-            <div class="price-book">
-              <div class="pill">From £70-£90</div>
-              <a class="book-inline" href="https://treatwellapp.page.link/HYpBb" target="_blank" rel="noopener">Book now</a>
-            </div>
-            <div class="meta">
-              <span>60 mins</span>
-              <span>Rejuvenation / Acne / Pigmentation</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="service">
-          <div class="service-top">
-            <h3>Advanced Hydrafacial</h3>
-          </div>
-          <p>
-            A deep-cleansing treatment designed to leave skin clearer, fresher and more radiant. Includes free pre-treatment consultation, double cleanse, gentle exfoliation, extractions where suitable, hydration infusion, facial massage, lymphatic drainage and red light therapy to finish. Targeted skin boosters may include polynucleotides, PDRN, niacinamide, peptides and collagen-supporting ingredients depending on your skin goals.
-          </p>
-          <div class="service-actions">
-            <div class="price-book">
-              <div class="pill">£100</div>
-              <a class="book-inline" href="https://treatwellapp.page.link/HYpBb" target="_blank" rel="noopener">Book now</a>
-            </div>
-            <div class="meta">
-              <span>60 mins</span>
-              <span>Hydration / Congestion / Glow</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="service">
-          <div class="service-top">
-            <h3>Dermaplaning</h3>
-          </div>
-          <p>
-            A professional exfoliating treatment that removes dead skin build-up and peach fuzz for a smoother, brighter finish. Includes free pre-treatment consultation, cleanse, skin preparation, dermaplaning and hydrating finishing products.
-          </p>
-          <div class="service-actions">
-            <div class="price-book">
-              <div class="pill">£20</div>
-              <a class="book-inline" href="https://treatwellapp.page.link/HYpBb" target="_blank" rel="noopener">Book now</a>
-            </div>
-            <div class="meta">
-              <span>15 mins</span>
-              <span>Instant smooth finish</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="service">
-          <div class="service-top">
-            <h3>Free Pre-Treatment Consultation</h3>
-          </div>
-          <p>
-            A quick consultation for clients who want help choosing the right facial or treatment before booking. Ideal if you are unsure where to start and want guidance on suitability, next steps and what may work best for your skin.
-          </p>
-          <div class="service-actions">
-            <div class="price-book">
-              <div class="pill">Free</div>
-              <a class="book-inline" href="https://treatwellapp.page.link/HYpBb" target="_blank" rel="noopener">Book now</a>
-            </div>
-            <div class="meta">
-              <span>15 mins</span>
-              <span>Suitability / Treatment guidance</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="service">
-          <div class="service-top">
-            <h3>New Client Skin Assessment</h3>
-          </div>
-          <p>
-            A detailed initial consultation to review your skin concerns, treatment suitability, current routine and next steps. Includes personalised recommendations and guidance on the treatments or skincare options best suited to your goals.
-          </p>
-          <div class="service-actions">
-            <div class="price-book">
-              <div class="pill">£45</div>
-              <a class="book-inline" href="https://treatwellapp.page.link/HYpBb" target="_blank" rel="noopener">Book now</a>
-            </div>
-            <div class="meta">
-              <span>60 mins</span>
-              <span>For first-time clients</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="service">
-          <div class="service-top">
-            <h3>Return Skin Assessment</h3>
-          </div>
-          <p>
-            A follow-up appointment to assess progress, review how your skin has been responding and refine your treatment plan or skincare approach where needed.
-          </p>
-          <div class="service-actions">
-            <div class="price-book">
-              <div class="pill">£37.50</div>
-              <a class="book-inline" href="https://treatwellapp.page.link/HYpBb" target="_blank" rel="noopener">Book now</a>
-            </div>
-            <div class="meta">
-              <span>60 mins</span>
-              <span>Ongoing support</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="service">
-          <div class="service-top">
-            <h3>Deep Cleansing Facial</h3>
-          </div>
-          <p>
-            Ideal for acne-prone, oily or congested skin. Includes free pre-treatment consultation, cleanse, exfoliation, steam or softening prep where suitable, extractions, calming products and hydration to help rebalance the skin.
-          </p>
-          <div class="service-actions">
-            <div class="price-book">
-              <div class="pill">£50</div>
-              <a class="book-inline" href="https://treatwellapp.page.link/HYpBb" target="_blank" rel="noopener">Book now</a>
-            </div>
-            <div class="meta">
-              <span>45 mins</span>
-              <span>Acne / Oily skin / Congestion</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="service">
-          <div class="service-top">
-            <h3>Express Facial</h3>
-          </div>
-          <p>
-            A shorter maintenance treatment designed to refresh and brighten the skin. Includes free pre-treatment consultation, cleanse, light exfoliation, hydration and finishing products for an instant glow.
-          </p>
-          <div class="service-actions">
-            <div class="price-book">
-              <div class="pill">£30</div>
-              <a class="book-inline" href="https://treatwellapp.page.link/HYpBb" target="_blank" rel="noopener">Book now</a>
-            </div>
-            <div class="meta">
-              <span>30 mins</span>
-              <span>Maintenance / Glow / Hydration</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="results">
-    <div class="container">
-      <div class="section-heading" style="text-align:left;">
-        <div class="label">Results</div>
-        <h2 class="section-title">Real progress takes consistency.</h2>
-        <div class="gold-line left"></div>
-      </div>
-
-      <div class="results-grid">
-        <div>
-          <p class="section-sub" style="margin:0; max-width:56ch; text-align:left;">
-            The right treatment plan, appropriate homecare and consistency over time can make a visible difference to confidence and skin health.
-          </p>
-
-          <div class="focus-list">
-            <div class="focus-item"><div class="focus-dot">•</div><div>Acne and congestion</div></div>
-            <div class="focus-item"><div class="focus-dot">•</div><div>Pigmentation and uneven tone</div></div>
-            <div class="focus-item"><div class="focus-dot">•</div><div>Texture, pores and acne scarring</div></div>
-            <div class="focus-item"><div class="focus-dot">•</div><div>Dehydration, dullness and glow</div></div>
-            <div class="focus-item"><div class="focus-dot">•</div><div>Overall rejuvenation and skin confidence</div></div>
-          </div>
-        </div>
-
-        <div class="photo">
-          <img src="F192D0D2-51C6-4EA8-99DB-6B262D1D05E0.png" alt="Before and after acne skin journey results">
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section section-center" id="clinic">
-    <div class="container">
-      <div class="label">Clinic & location</div>
-      <h2 class="section-title">A private setting designed to feel calm and elevated.</h2>
-      <div class="gold-line"></div>
-      <p class="section-sub">
-        Located in Park Hill, Sheffield, the clinic is designed to feel modern, welcoming and comfortable from the moment you arrive.
-      </p>
-
-      <div class="gallery-grid">
-        <div class="photo">
-          <img src="IMG_3974.jpeg" alt="View from the clinic">
-        </div>
-        <div class="gallery-stack">
-          <div class="photo">
-            <img src="IMG_3976.jpeg" alt="Interior clinic space">
-          </div>
-          <div class="photo">
-            <img src="IMG_3973.jpeg" alt="Clinic balcony and surrounding view">
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section-sm">
-    <div class="container">
-      <div class="section-heading location-copy">
-        <div class="label">Getting here</div>
-        <h2 class="section-title">Easy to reach from across Sheffield.</h2>
-        <div class="gold-line left"></div>
-      </div>
-
-      <div class="split">
-        <div class="location-copy">
-          <p>
-            Skin by Saif Clinic is based in Park Hill, Sheffield, in a central location that is convenient for clients travelling from the city centre and surrounding Sheffield areas.
-          </p>
-          <p>
-            Park Hill is well known and easy to find, making the clinic simple to access whether you are arriving on foot, by taxi or from nearby central transport links.
-          </p>
-          <p>
-            Once booked, full arrival details can be provided to help make your visit as smooth and stress-free as possible.
-          </p>
-        </div>
-
-        <div class="photo">
-          <img src="IMG_3970.jpeg" alt="Park Hill Sheffield location">
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section-sm section-center">
-    <div class="container">
-      <div class="label">Offers</div>
-      <h2 class="section-title">Supportive pricing for new and returning clients.</h2>
-      <div class="gold-line"></div>
-
-      <div class="offer-grid">
-        <div class="offer-card">
-          <h3>Courses & monthly options</h3>
-          <p>
-            Treatment courses are available at a discounted rate for clients committing to a longer-term skin plan. Monthly payment options may also be available for selected courses.
-          </p>
-        </div>
-
-        <div class="offer-card">
-          <h3>Exclusive offers</h3>
-          <p>
-            <strong>15% off</strong> is available for <strong>NHS</strong> and <strong>Blue Light Card</strong> holders. New clients can also use <strong>SKIN10</strong> for <strong>£10 off</strong> treatments over <strong>£50</strong>, or <strong>SKIN5</strong> for <strong>£5 off</strong> treatments under <strong>£50</strong>.
-          </p>
-          <div class="discount-code">NHS15 • SKIN10 • SKIN5</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section section-center" id="faq">
-    <div class="container">
-      <div class="label">FAQs</div>
-      <h2 class="section-title">Everything you might want to know first.</h2>
-      <div class="gold-line"></div>
-
-      <div class="faq-grid">
-        <details>
-          <summary>How do I know which treatment is right for me?</summary>
-          <p>New clients can begin with a free pre-treatment consultation or a full skin assessment so your concerns, routine and treatment suitability can be reviewed before building the most appropriate plan.</p>
-        </details>
-
-        <details>
-          <summary>What is the Ultimate Skin Rejuvenation Facial?</summary>
-          <p>This is a premium combination treatment that brings together Hydrafacial and microneedling in one appointment to deeply cleanse, hydrate, refresh and support skin rejuvenation, with facial massage, red light therapy and a free pre-treatment consultation included.</p>
-        </details>
-
-        <details>
-          <summary>Are treatments personalised?</summary>
-          <p>Yes. Treatments are adjusted around your skin type, concerns, sensitivity, current routine and treatment goals rather than using the same protocol for every client.</p>
-        </details>
-
-        <details>
-          <summary>How is hygiene handled in clinic?</summary>
-          <p>Cleanliness, careful preparation and professional working standards are a key part of the clinic experience, with a strong focus on safe, considered treatment practice throughout each appointment.</p>
-        </details>
-
-        <details>
-          <summary>Do I need a consultation before treatment?</summary>
-          <p>Some treatments may require consultation or suitability checks beforehand. New clients are encouraged to book a free pre-treatment consultation or skin assessment if they are unsure where to start.</p>
-        </details>
-
-        <details>
-          <summary>Where in Sheffield are you based?</summary>
-          <p>The clinic is based in Park Hill, Sheffield, in a convenient central location. Full arrival details can be provided after booking.</p>
-        </details>
-
-        <details>
-          <summary>Is Park Hill easy to get to?</summary>
-          <p>Yes. Park Hill is centrally located and easy to access from Sheffield city centre and surrounding areas, making it convenient for clients across Sheffield.</p>
-        </details>
-
-        <details>
-          <summary>Can I book a course of treatments?</summary>
-          <p>Yes. Courses may be booked at a discounted rate, and monthly payment options may be available depending on the treatment plan selected.</p>
-        </details>
-
-        <details>
-          <summary>Do you offer discounts?</summary>
-          <p>Yes. NHS and Blue Light Card holders receive 15% off. New clients can also use SKIN10 for £10 off treatments over £50 or SKIN5 for £5 off treatments under £50.</p>
-        </details>
-
-        <details>
-          <summary>How do I book?</summary>
-          <p>Appointments can be booked online through Treatwell. You can also follow along on Instagram or Facebook for updates, results and clinic information.</p>
-        </details>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="contact">
-    <div class="container">
-      <div class="label" style="display:table; margin:0 auto 14px;">Book & connect</div>
-      <h2 class="section-title" style="text-align:center;">Ready to start your skin journey?</h2>
-      <div class="gold-line"></div>
-      <p class="section-sub" style="text-align:center;">
-        Book online, get in touch or follow along on Instagram and Facebook for updates, treatments and results.
-      </p>
-
-      <div class="contact-grid">
-        <div class="contact-panel center">
-          <h3 style="margin-top:0; font-size:30px;">Book your appointment</h3>
-          <p style="color:var(--muted); max-width:34ch; margin:0 auto;">
-            Choose your treatment, consultation or facial online and book at a time that suits you.
-          </p>
-
-          <div class="cta-row">
-            <a class="btn btn-primary" href="https://treatwellapp.page.link/HYpBb" target="_blank" rel="noopener">Book on Treatwell</a>
-
-            <a class="btn btn-instagram" href="https://instagram.com/skinbysaif" target="_blank" rel="noopener">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="2"/>
-                <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/>
-                <circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/>
-              </svg>
-              Instagram
-            </a>
-
-            <a class="btn btn-facebook" href="https://www.facebook.com/share/18F4UPGhCZ/?mibextid=wwXIfr" target="_blank" rel="noopener">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <path d="M14 8h3V4h-3c-2.6 0-4 1.5-4 4.3V11H7v4h3v5h4v-5h3.1l.9-4H14V8.6c0-.4.2-.6.6-.6Z" fill="currentColor"/>
-              </svg>
-              Facebook
-            </a>
-          </div>
-        </div>
-
-        <div class="contact-panel">
-          <h3 style="margin-top:0; font-size:30px; text-align:center;">Contact details</h3>
-
-          <div class="contact-list">
-            <div class="contact-item">
-              <div class="icon">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                  <path d="M12 13.2 2.8 6.75V18a2 2 0 0 0 2 2h14.4a2 2 0 0 0 2-2V6.75L12 13.2Z" stroke="currentColor" stroke-width="1.8"/>
-                  <path d="M21.2 5.25A2 2 0 0 0 19.2 4H4.8a2 2 0 0 0-2 1.25L12 11.7l9.2-6.45Z" stroke="currentColor" stroke-width="1.8"/>
-                </svg>
-              </div>
-              <div>skinbysaif@gmail.com</div>
-            </div>
-
-            <div class="contact-item">
-              <div class="icon">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                  <path d="M6.6 10.8c1.8 3.6 3 4.8 6.6 6.6l2.2-2.2c.3-.3.8-.4 1.2-.3 1 .3 2 .4 3 .4.7 0 1.2.5 1.2 1.2V20c0 .7-.5 1.2-1.2 1.2C10.2 21.2 2.8 13.8 2.8 4.4c0-.7.5-1.2 1.2-1.2H7.5c.7 0 1.2.5 1.2 1.2 0 1 .1 2 .4 3 .1.4 0 .9-.3 1.2l-2.2 2.2Z" stroke="currentColor" stroke-width="1.8"/>
-                </svg>
-              </div>
-              <div>01144387655 - WhatsApp Business</div>
-            </div>
-
-            <div class="contact-item">
-              <div class="icon">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                  <path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11Z" stroke="currentColor" stroke-width="1.8"/>
-                  <circle cx="12" cy="10" r="2.5" stroke="currentColor" stroke-width="1.8"/>
-                </svg>
-              </div>
-              <div>Park Hill, Sheffield</div>
-            </div>
-
-            <div class="contact-item">
-              <div class="icon">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                  <path d="M7 4h10M9 2h6v4H9V2Zm3 20a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm.5-8.75V8.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-                  <path d="m12.5 12 3 1.75" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-                </svg>
-              </div>
-              <div>By appointment only</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section-sm" id="terms">
-    <div class="container">
-      <div class="label" style="display:table; margin:0 auto 14px;">Terms & conditions</div>
-      <h2 class="section-title" style="text-align:center;">Booking and clinic terms.</h2>
-      <div class="gold-line"></div>
-
-      <div class="tc-box">
-        <h3>Terms & Conditions</h3>
-        <p><strong>Appointments:</strong> All appointments are subject to availability and may require prior consultation or suitability assessment depending on the treatment booked.</p>
-        <p><strong>Consultation and suitability:</strong> Treatments are only carried out where considered appropriate. A treatment may be postponed, amended or declined if it is not suitable on the day.</p>
-        <p><strong>Arrival:</strong> Please arrive on time for your appointment. Late arrival may reduce treatment time and, in some cases, may require the appointment to be rescheduled.</p>
-        <p><strong>Cancellations and rescheduling:</strong> At least 48 hours' notice is requested where possible. Late cancellations or missed appointments may be charged in line with the booking platform policy.</p>
-        <p><strong>Results:</strong> Individual results vary. No specific outcome can be guaranteed, as skin response differs from person to person and depends on factors such as homecare, consistency and skin history.</p>
-        <p><strong>Courses and offers:</strong> Discounted offers, codes, NHS or Blue Light promotions and treatment course pricing may be withdrawn or amended at any time. Offers may not be combined unless stated otherwise.</p>
-        <p><strong>Medical disclosure:</strong> Clients must disclose relevant medical conditions, allergies, medication and recent treatments before treatment. Failure to do so may affect treatment suitability and outcomes.</p>
-        <p><strong>Patch testing and aftercare:</strong> Where appropriate, patch testing and aftercare guidance must be followed. Skin by Saif Clinic cannot accept responsibility for issues arising where aftercare advice has not been followed.</p>
-        <p><strong>Right to refuse treatment:</strong> The clinic reserves the right to refuse or discontinue treatment where this is considered necessary for safety, suitability or professional reasons.</p>
-      </div>
-    </div>
-  </section>
-
-  <div class="footer">
-    <div class="container">
-      © Skin by Saif Clinic - Sheffield - Advanced skin treatments by appointment
-    </div>
-  </div>
-
-</body>
-</html>
+  
