@@ -5,12 +5,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<title>Skin by Saif Clinic Sheffield - Skin Consultations, Microneedling, Hydrafacial & Acne Treatments</title>
+  <title>Skin by Saif Clinic Sheffield - Skin Consultations, Microneedling, Hydrafacial & Acne Treatments</title>
 
-<link rel="icon" type="image/png" href="IMG_4133.png">
-<link rel="apple-touch-icon" href="IMG_4133.png">
+  <link rel="icon" type="image/png" href="IMG_4133.png">
+  <link rel="apple-touch-icon" href="IMG_4133.png">
   
-<meta name="description" content="Skin by Saif is a private Sheffield skin clinic specialising in microneedling, hydrafacial and advanced facial treatments for acne, hyperpigmentation and skin rejuvenation. Book your consultation today.">
+  <meta name="description" content="Skin by Saif is a private Sheffield skin clinic specialising in microneedling, hydrafacial and advanced facial treatments for acne, hyperpigmentation and skin rejuvenation. Book your consultation today.">
   <meta name="robots" content="index, follow" />
 
   <meta property="og:title" content="Skin by Saif Clinic | Sheffield Skin Clinic" />
@@ -975,6 +975,15 @@
       transform:translateY(0);
     }
 
+    section[id]{
+      scroll-margin-top:140px;
+    }
+
+    .reveal:target{
+      opacity:1;
+      transform:translateY(0);
+    }
+
     @media (prefers-reduced-motion: reduce){
       .reveal{
         opacity:1;
@@ -1917,8 +1926,8 @@
         }
       });
     }, {
-      threshold: 0.12,
-      rootMargin: "0px 0px -40px 0px"
+      threshold: 0.05,
+      rootMargin: "0px 0px -20px 0px"
     });
 
     revealEls.forEach((el) => revealObserver.observe(el));
@@ -1939,6 +1948,23 @@
         behavior: 'smooth'
       });
     });
+
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+      link.addEventListener('click', () => {
+        const id = link.getAttribute('href');
+        const target = document.querySelector(id);
+        if (target && target.classList.contains('reveal')) {
+          target.classList.add('is-visible');
+        }
+      });
+    });
+
+    if (window.location.hash) {
+      const target = document.querySelector(window.location.hash);
+      if (target && target.classList.contains('reveal')) {
+        target.classList.add('is-visible');
+      }
+    }
   </script>
 
 </body>
