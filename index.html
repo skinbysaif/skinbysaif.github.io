@@ -65,10 +65,11 @@
       --instagram-4:#962fbf;
       --instagram-5:#4f5bd5;
       --facebook:#1877f2;
-      --sale-red:#ff6b6b;
-      --sale-red-dark:#ef4444;
+      --lux-gradient:linear-gradient(135deg, rgba(255,255,255,.98), rgba(247,241,234,.93));
+      --sale-red:#ef4444;
       --sale-old:#94a3b8;
-      --navy:#0f234f;
+      --sale-bg:#fff7f7;
+      --sale-border:rgba(239,68,68,.16);
     }
 
     *{box-sizing:border-box}
@@ -217,7 +218,7 @@
       margin-bottom:18px;
     }
 
-    h1,h2,h3,h4{
+    h1,h2,h3{
       font-family:Georgia, "Times New Roman", serif;
       letter-spacing:-.02em;
       color:var(--text);
@@ -489,6 +490,199 @@
       letter-spacing:.06em;
       text-transform:uppercase;
       margin-bottom:14px;
+    }
+
+    .services{
+      display:grid;
+      grid-template-columns:repeat(2, minmax(0,1fr));
+      gap:18px;
+      margin-top:28px;
+    }
+
+    .service{
+      background:var(--lux-gradient);
+      border:1px solid var(--line-soft);
+      border-radius:18px;
+      padding:22px;
+      box-shadow:var(--shadow);
+      text-align:left;
+      display:flex;
+      flex-direction:column;
+      gap:14px;
+      transition:transform .28s ease, box-shadow .28s ease, border-color .28s ease;
+    }
+
+    .service:hover{
+      transform:translateY(-4px);
+      box-shadow:var(--shadow-strong);
+    }
+
+    .service.featured{
+      border:1px solid rgba(170,127,75,.28);
+      box-shadow:0 18px 40px rgba(157,115,67,.09);
+    }
+
+    .service-image{
+      position:relative;
+      overflow:hidden;
+      border-radius:16px;
+      aspect-ratio:16 / 10;
+      background:var(--surface-soft);
+      border:1px solid var(--line-soft);
+      margin-bottom:2px;
+    }
+
+    .service-image img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      transition:transform .45s ease;
+    }
+
+    .service:hover .service-image img{
+      transform:scale(1.04);
+    }
+
+    .service-top{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:14px;
+      margin-bottom:0;
+    }
+
+    .service h3{
+      margin:0;
+      font-size:22px;
+      line-height:1.15;
+    }
+
+    .price-block{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+
+    .old-price{
+      color:var(--sale-old);
+      font-size:14px;
+      font-weight:700;
+      text-decoration:line-through;
+      line-height:1;
+    }
+
+    .pill{
+      flex-shrink:0;
+      padding:8px 12px;
+      border-radius:999px;
+      background:var(--sale-bg);
+      border:1px solid var(--sale-border);
+      color:var(--sale-red);
+      font-size:13px;
+      font-weight:800;
+      line-height:1;
+    }
+
+    .pill.featured{
+      background:linear-gradient(180deg, #ff6b6b, #ef4444);
+      color:#fff;
+      border:none;
+    }
+
+    .service p{
+      color:var(--muted);
+      margin:0;
+      font-size:15px;
+    }
+
+    .service-details{
+      display:none;
+      color:var(--muted);
+      font-size:15px;
+      line-height:1.65;
+      padding-top:2px;
+    }
+
+    .service-details.open{
+      display:block;
+    }
+
+    .service-actions{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:12px;
+      flex-wrap:wrap;
+      padding-top:14px;
+      border-top:1px solid var(--line-soft);
+    }
+
+    .price-book{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+
+    .service-links{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-left:auto;
+    }
+
+    .show-details{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:40px;
+      padding:0 14px;
+      border-radius:999px;
+      font-weight:700;
+      font-size:14px;
+      border:1px solid var(--line);
+      background:#fff;
+      color:var(--accent-dark);
+      cursor:pointer;
+      transition:transform .22s ease, box-shadow .22s ease, background .22s ease;
+    }
+
+    .show-details:hover{
+      transform:translateY(-2px);
+      background:var(--surface-soft);
+      box-shadow:0 8px 18px rgba(20,16,12,.06);
+    }
+
+    .book-inline{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:40px;
+      padding:0 16px;
+      border-radius:999px;
+      font-weight:700;
+      font-size:14px;
+      background:linear-gradient(180deg, #b98c57, #9d7343);
+      color:#fff;
+      box-shadow:0 8px 18px rgba(157,115,67,.18);
+      white-space:nowrap;
+      transition:transform .22s ease, box-shadow .22s ease;
+    }
+
+    .book-inline:hover{
+      transform:translateY(-2px);
+      box-shadow:0 12px 24px rgba(157,115,67,.24);
+    }
+
+    .meta{
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      flex-wrap:wrap;
+      color:var(--muted);
+      font-size:14px;
     }
 
     .why-grid{
@@ -847,145 +1041,6 @@
       transform:translateY(0);
     }
 
-    .treatments-list{
-      margin-top:30px;
-      background:#fff;
-      border:1px solid var(--line-soft);
-      border-radius:24px;
-      box-shadow:var(--shadow-strong);
-      overflow:hidden;
-      text-align:left;
-    }
-
-    .treatment-item{
-      border-bottom:1px solid #e8edf3;
-    }
-
-    .treatment-item:last-child{
-      border-bottom:none;
-    }
-
-    .treatment-row{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:22px;
-      padding:24px 28px;
-    }
-
-    .treatment-info{
-      min-width:0;
-      flex:1;
-    }
-
-    .treatment-name{
-      margin:0 0 6px;
-      font-size:18px;
-      line-height:1.25;
-      color:var(--navy);
-      font-family:Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      font-weight:600;
-      letter-spacing:0;
-    }
-
-    .treatment-meta{
-      display:flex;
-      align-items:center;
-      gap:14px;
-      flex-wrap:wrap;
-      color:#44526b;
-      font-size:15px;
-    }
-
-    .details-link{
-      font-weight:700;
-      color:var(--navy);
-      background:none;
-      border:none;
-      padding:0;
-      cursor:pointer;
-      text-decoration:none;
-    }
-
-    .details-link:hover{
-      text-decoration:underline;
-    }
-
-    .treatment-right{
-      display:flex;
-      align-items:center;
-      gap:16px;
-      flex-shrink:0;
-    }
-
-    .price-stack{
-      text-align:right;
-      line-height:1.15;
-      min-width:72px;
-    }
-
-    .new-price{
-      display:block;
-      color:var(--navy);
-      font-size:22px;
-      font-weight:800;
-      letter-spacing:-.02em;
-    }
-
-    .old-price{
-      display:block;
-      margin-top:6px;
-      color:var(--sale-old);
-      font-size:14px;
-      text-decoration:line-through;
-      font-weight:600;
-    }
-
-    .select-btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      min-height:46px;
-      padding:0 20px;
-      border:1.5px solid var(--sale-red);
-      color:var(--sale-red);
-      background:#fff;
-      border-radius:6px;
-      font-size:15px;
-      font-weight:700;
-      white-space:nowrap;
-      transition:.2s ease;
-    }
-
-    .select-btn:hover{
-      background:#fff5f5;
-      border-color:var(--sale-red-dark);
-      color:var(--sale-red-dark);
-      transform:translateY(-1px);
-    }
-
-    .treatment-details{
-      display:none;
-      padding:0 28px 24px;
-      color:var(--muted);
-      font-size:15px;
-      line-height:1.7;
-      background:linear-gradient(180deg, rgba(247,241,234,.35), rgba(255,255,255,0));
-    }
-
-    .treatment-details.open{
-      display:block;
-    }
-
-    .treatment-details p{
-      margin:0;
-      max-width:78ch;
-    }
-
-    .treatment-item.active .details-link{
-      text-decoration:underline;
-    }
-
     section[id]{
       scroll-margin-top:140px;
     }
@@ -1002,6 +1057,7 @@
         transition:none;
       }
 
+      .service,
       .why-card,
       .offer-card,
       .contact-panel,
@@ -1010,9 +1066,10 @@
       details,
       .point,
       .btn,
+      .book-inline,
       .back-to-top,
       .whatsapp-float,
-      .select-btn{
+      .show-details{
         transition:none;
       }
 
@@ -1029,6 +1086,7 @@
       .gallery-grid,
       .contact-grid,
       .offer-grid,
+      .services,
       .why-grid{
         grid-template-columns:1fr;
       }
@@ -1055,14 +1113,6 @@
 
       .portrait-photo img{
         height:300px;
-      }
-
-      .treatment-row{
-        padding:22px 22px;
-      }
-
-      .treatment-details{
-        padding:0 22px 22px;
       }
     }
 
@@ -1194,12 +1244,51 @@
         text-align:center;
       }
 
+      .services,
       .why-grid,
       .offer-grid,
       .contact-grid,
       .faq-grid,
       .focus-list{
         gap:14px;
+      }
+
+      .service{
+        padding:16px;
+      }
+
+      .service-top{
+        flex-direction:column;
+        align-items:flex-start;
+      }
+
+      .service h3{
+        font-size:21px;
+      }
+
+      .service-actions{
+        flex-direction:column;
+        align-items:stretch;
+      }
+
+      .price-book,
+      .meta,
+      .service-links{
+        justify-content:center;
+      }
+
+      .service-links{
+        width:100%;
+        margin-left:0;
+      }
+
+      .show-details,
+      .book-inline{
+        width:100%;
+      }
+
+      .meta{
+        text-align:center;
       }
 
       .contact-panel,
@@ -1222,51 +1311,6 @@
 
       .portrait-photo img{
         height:280px;
-      }
-
-      .treatments-list{
-        border-radius:20px;
-      }
-
-      .treatment-row{
-        flex-direction:column;
-        align-items:flex-start;
-        gap:14px;
-        padding:18px 16px;
-      }
-
-      .treatment-name{
-        font-size:17px;
-      }
-
-      .treatment-meta{
-        font-size:14px;
-      }
-
-      .treatment-right{
-        width:100%;
-        justify-content:space-between;
-        align-items:flex-start;
-      }
-
-      .price-stack{
-        text-align:left;
-      }
-
-      .new-price{
-        font-size:21px;
-      }
-
-      .select-btn{
-        min-height:42px;
-        padding:0 18px;
-        font-size:14px;
-        width:auto;
-      }
-
-      .treatment-details{
-        padding:0 16px 18px;
-        font-size:14px;
       }
 
       .back-to-top{
@@ -1454,275 +1498,383 @@
   <section class="section section-center reveal" id="treatments">
     <div class="container">
       <div class="label">Treatments</div>
-      <h2 class="section-title">A curated treatment menu with current offers.</h2>
+      <h2 class="section-title">A curated treatment menu for real skin concerns.</h2>
       <div class="gold-line"></div>
       <p class="section-sub">
-        Advanced skin treatments with current promotional pricing, matched to your Treatwell timings and offers.
+        Focused on acne, congestion, dehydration, uneven tone, scarring, texture and overall skin rejuvenation, with current promotional pricing.
       </p>
 
-      <div class="treatments-list">
+      <div class="services">
 
-        <div class="treatment-item">
-          <div class="treatment-row">
-            <div class="treatment-info">
-              <h4 class="treatment-name">Ultimate Skin Rejuvenation Facial - Hydrafacial + Microneedling</h4>
-              <div class="treatment-meta">
-                <span>1 hr 30 mins</span>
-                <button class="details-link" type="button">Show Details</button>
-              </div>
-            </div>
-            <div class="treatment-right">
-              <div class="price-stack">
-                <span class="new-price">£130</span>
-                <span class="old-price">£160</span>
-              </div>
-              <a class="select-btn" href="https://treatwell.co.uk/place/skin-by-saif/" target="_blank" rel="noopener">Select</a>
-            </div>
+        <div class="service featured">
+          <div class="service-image">
+            <img src="IMG_4094.jpeg" alt="Ultimate Skin Rejuvenation Facial at Skin by Saif Clinic">
           </div>
-          <div class="treatment-details">
+          <div class="service-top">
+            <h3>Ultimate Skin Rejuvenation Facial</h3>
+          </div>
+          <div class="price-block">
+            <span class="old-price">£160</span>
+            <div class="pill featured">£130</div>
+          </div>
+          <p>
+            A premium treatment combining Hydrafacial and microneedling for the ultimate skin refresh.
+          </p>
+          <div class="service-details">
             <p>A premium 90-minute treatment combining Hydrafacial and microneedling for the ultimate skin refresh. Your appointment includes a deep cleanse, exfoliation, extractions where suitable, hydration infusion, facial massage, red light therapy, microneedling and finishing aftercare tailored to your skin goals. Targeted add-on infusions and actives may include polynucleotides, PDRN, niacinamide, peptides and collagen-supporting ingredients where appropriate.</p>
           </div>
-        </div>
-
-        <div class="treatment-item">
-          <div class="treatment-row">
-            <div class="treatment-info">
-              <h4 class="treatment-name">Hydrafacial</h4>
-              <div class="treatment-meta">
-                <span>1 hr 15 mins</span>
-                <button class="details-link" type="button">Show Details</button>
+          <div class="service-actions">
+            <div class="price-book">
+              <div class="meta">
+                <span>1 hr 30 mins</span>
+                <span>Hydrafacial + Microneedling</span>
               </div>
             </div>
-            <div class="treatment-right">
-              <div class="price-stack">
-                <span class="new-price">£100</span>
-                <span class="old-price">£130</span>
-              </div>
-              <a class="select-btn" href="https://treatwell.co.uk/place/skin-by-saif/" target="_blank" rel="noopener">Select</a>
+            <div class="service-links">
+              <button class="show-details" type="button">Show Details</button>
+              <a class="book-inline" href="https://treatwell.co.uk/place/skin-by-saif/" target="_blank" rel="noopener">Book now</a>
             </div>
-          </div>
-          <div class="treatment-details">
-            <p>A deep-cleansing treatment designed to leave skin clearer, fresher and more radiant. Includes double cleanse, gentle exfoliation, chemical peel, extractions where suitable, hydration infusion, facial massage, lymphatic drainage and red light therapy to finish. Targeted skin boosters may include polynucleotides, PDRN, niacinamide, peptides and collagen-supporting ingredients depending on your skin goals.</p>
           </div>
         </div>
 
-        <div class="treatment-item">
-          <div class="treatment-row">
-            <div class="treatment-info">
-              <h4 class="treatment-name">Advanced Microneedling - Standard</h4>
-              <div class="treatment-meta">
-                <span>1 hr</span>
-                <button class="details-link" type="button">Show Details</button>
-              </div>
-            </div>
-            <div class="treatment-right">
-              <div class="price-stack">
-                <span class="new-price">£70</span>
-                <span class="old-price">£90</span>
-              </div>
-              <a class="select-btn" href="https://treatwell.co.uk/place/skin-by-saif/" target="_blank" rel="noopener">Select</a>
-            </div>
+        <div class="service">
+          <div class="service-image">
+            <img src="IMG_4095.jpeg" alt="Advanced Microneedling at Skin by Saif Clinic">
           </div>
-          <div class="treatment-details">
+          <div class="service-top">
+            <h3>Advanced Microneedling – Standard</h3>
+          </div>
+          <div class="price-block">
+            <span class="old-price">£90</span>
+            <div class="pill">£70</div>
+          </div>
+          <p>
+            A collagen-stimulating treatment designed for overall skin rejuvenation and texture refinement.
+          </p>
+          <div class="service-details">
             <p>A collagen-stimulating microneedling treatment ideal for general rejuvenation, texture refinement and healthier-looking skin. Includes skin preparation, sterile microneedling treatment, calming finishing products and aftercare guidance.</p>
           </div>
-        </div>
-
-        <div class="treatment-item">
-          <div class="treatment-row">
-            <div class="treatment-info">
-              <h4 class="treatment-name">Advanced Microneedling - Acne and Acne Scarring</h4>
-              <div class="treatment-meta">
+          <div class="service-actions">
+            <div class="price-book">
+              <div class="meta">
                 <span>1 hr</span>
-                <button class="details-link" type="button">Show Details</button>
+                <span>Standard</span>
               </div>
             </div>
-            <div class="treatment-right">
-              <div class="price-stack">
-                <span class="new-price">£90</span>
-                <span class="old-price">£110</span>
-              </div>
-              <a class="select-btn" href="https://treatwell.co.uk/place/skin-by-saif/" target="_blank" rel="noopener">Select</a>
+            <div class="service-links">
+              <button class="show-details" type="button">Show Details</button>
+              <a class="book-inline" href="https://treatwell.co.uk/place/skin-by-saif/" target="_blank" rel="noopener">Book now</a>
             </div>
           </div>
-          <div class="treatment-details">
+        </div>
+
+        <div class="service">
+          <div class="service-image">
+            <img src="IMG_4095.jpeg" alt="Advanced Microneedling for acne and scarring at Skin by Saif Clinic">
+          </div>
+          <div class="service-top">
+            <h3>Advanced Microneedling – Acne & Acne Scarring</h3>
+          </div>
+          <div class="price-block">
+            <span class="old-price">£110</span>
+            <div class="pill">£90</div>
+          </div>
+          <p>
+            A targeted microneedling treatment designed for post-acne marks, textural irregularities and scarring.
+          </p>
+          <div class="service-details">
             <p>A targeted microneedling treatment designed for post-acne marks, textural irregularities and acne scarring. Treatment depth is adjusted to your skin concern, followed by soothing finishing products and aftercare guidance.</p>
           </div>
-        </div>
-
-        <div class="treatment-item">
-          <div class="treatment-row">
-            <div class="treatment-info">
-              <h4 class="treatment-name">Advanced Microneedling - Pigmentation and Uneven Tone</h4>
-              <div class="treatment-meta">
+          <div class="service-actions">
+            <div class="price-book">
+              <div class="meta">
                 <span>1 hr</span>
-                <button class="details-link" type="button">Show Details</button>
+                <span>Acne & Scarring</span>
               </div>
             </div>
-            <div class="treatment-right">
-              <div class="price-stack">
-                <span class="new-price">£90</span>
-                <span class="old-price">£110</span>
-              </div>
-              <a class="select-btn" href="https://treatwell.co.uk/place/skin-by-saif/" target="_blank" rel="noopener">Select</a>
+            <div class="service-links">
+              <button class="show-details" type="button">Show Details</button>
+              <a class="book-inline" href="https://treatwell.co.uk/place/skin-by-saif/" target="_blank" rel="noopener">Book now</a>
             </div>
           </div>
-          <div class="treatment-details">
+        </div>
+
+        <div class="service">
+          <div class="service-image">
+            <img src="IMG_4095.jpeg" alt="Advanced Microneedling for pigmentation and uneven tone at Skin by Saif Clinic">
+          </div>
+          <div class="service-top">
+            <h3>Advanced Microneedling – Pigmentation & Uneven Tone</h3>
+          </div>
+          <div class="price-block">
+            <span class="old-price">£110</span>
+            <div class="pill">£90</div>
+          </div>
+          <p>
+            A focused microneedling treatment for uneven tone, post-inflammatory pigmentation and dull-looking skin.
+          </p>
+          <div class="service-details">
             <p>A focused microneedling treatment for uneven tone, post-inflammatory pigmentation and dull-looking skin. Designed to support smoother, brighter and more even-looking results over time.</p>
           </div>
-        </div>
-
-        <div class="treatment-item">
-          <div class="treatment-row">
-            <div class="treatment-info">
-              <h4 class="treatment-name">Advanced Microneedling - Rejuvenation and Aging</h4>
-              <div class="treatment-meta">
+          <div class="service-actions">
+            <div class="price-book">
+              <div class="meta">
                 <span>1 hr</span>
-                <button class="details-link" type="button">Show Details</button>
+                <span>Pigmentation & Uneven Tone</span>
               </div>
             </div>
-            <div class="treatment-right">
-              <div class="price-stack">
-                <span class="new-price">£90</span>
-                <span class="old-price">£110</span>
-              </div>
-              <a class="select-btn" href="https://treatwell.co.uk/place/skin-by-saif/" target="_blank" rel="noopener">Select</a>
+            <div class="service-links">
+              <button class="show-details" type="button">Show Details</button>
+              <a class="book-inline" href="https://treatwell.co.uk/place/skin-by-saif/" target="_blank" rel="noopener">Book now</a>
             </div>
           </div>
-          <div class="treatment-details">
+        </div>
+
+        <div class="service">
+          <div class="service-image">
+            <img src="IMG_4095.jpeg" alt="Advanced Microneedling for rejuvenation and aging at Skin by Saif Clinic">
+          </div>
+          <div class="service-top">
+            <h3>Advanced Microneedling – Rejuvenation & Aging</h3>
+          </div>
+          <div class="price-block">
+            <span class="old-price">£110</span>
+            <div class="pill">£90</div>
+          </div>
+          <p>
+            A rejuvenating microneedling treatment designed to support collagen production and improve texture.
+          </p>
+          <div class="service-details">
             <p>A rejuvenating microneedling treatment designed to support collagen production, improve texture and soften the look of tired or ageing skin. Includes calming finishing products and personalised aftercare advice.</p>
           </div>
-        </div>
-
-        <div class="treatment-item">
-          <div class="treatment-row">
-            <div class="treatment-info">
-              <h4 class="treatment-name">Deep Cleansing Facial - Acne, Congestion, Extractions and/or Oily Skin</h4>
-              <div class="treatment-meta">
-                <span>45 mins</span>
-                <button class="details-link" type="button">Show Details</button>
+          <div class="service-actions">
+            <div class="price-book">
+              <div class="meta">
+                <span>1 hr</span>
+                <span>Rejuvenation & Aging</span>
               </div>
             </div>
-            <div class="treatment-right">
-              <div class="price-stack">
-                <span class="new-price">£50</span>
-                <span class="old-price">£60</span>
-              </div>
-              <a class="select-btn" href="https://treatwell.co.uk/place/skin-by-saif/" target="_blank" rel="noopener">Select</a>
+            <div class="service-links">
+              <button class="show-details" type="button">Show Details</button>
+              <a class="book-inline" href="https://treatwell.co.uk/place/skin-by-saif/" target="_blank" rel="noopener">Book now</a>
             </div>
-          </div>
-          <div class="treatment-details">
-            <p>Ideal for acne-prone, oily or congested skin. Includes cleanse, exfoliation, steam or softening prep where suitable, extractions, calming products and hydration to help rebalance the skin and leave it feeling cleaner and fresher.</p>
           </div>
         </div>
 
-        <div class="treatment-item">
-          <div class="treatment-row">
-            <div class="treatment-info">
-              <h4 class="treatment-name">Facial - Express</h4>
-              <div class="treatment-meta">
-                <span>30 mins</span>
-                <button class="details-link" type="button">Show Details</button>
-              </div>
-            </div>
-            <div class="treatment-right">
-              <div class="price-stack">
-                <span class="new-price">£30</span>
-                <span class="old-price">£40</span>
-              </div>
-              <a class="select-btn" href="https://treatwell.co.uk/place/skin-by-saif/" target="_blank" rel="noopener">Select</a>
-            </div>
+        <div class="service">
+          <div class="service-image">
+            <img src="IMG_4096.jpeg" alt="Hydrafacial at Skin by Saif Clinic">
           </div>
-          <div class="treatment-details">
-            <p>A shorter maintenance treatment designed to refresh and brighten the skin. Includes cleanse, light exfoliation, hydration and finishing products for an instant glow and a quick skin reset.</p>
+          <div class="service-top">
+            <h3>Hydrafacial</h3>
+          </div>
+          <div class="price-block">
+            <span class="old-price">£130</span>
+            <div class="pill">£100</div>
+          </div>
+          <p>
+            A deep-cleansing treatment designed to leave skin clearer, fresher and more radiant.
+          </p>
+          <div class="service-details">
+            <p>A deep-cleansing treatment designed to leave skin clearer, fresher and more radiant. Includes double cleanse, gentle exfoliation, chemical peel, extractions where suitable, hydration infusion, facial massage, lymphatic drainage and red light therapy to finish. Targeted skin boosters may include polynucleotides, PDRN, niacinamide, peptides and collagen-supporting ingredients depending on your skin goals.</p>
+          </div>
+          <div class="service-actions">
+            <div class="price-book">
+              <div class="meta">
+                <span>1 hr 15 mins</span>
+                <span>Hydration / Congestion / Glow</span>
+              </div>
+            </div>
+            <div class="service-links">
+              <button class="show-details" type="button">Show Details</button>
+              <a class="book-inline" href="https://treatwell.co.uk/place/skin-by-saif/" target="_blank" rel="noopener">Book now</a>
+            </div>
           </div>
         </div>
 
-        <div class="treatment-item">
-          <div class="treatment-row">
-            <div class="treatment-info">
-              <h4 class="treatment-name">Dermaplaning</h4>
-              <div class="treatment-meta">
-                <span>15 mins</span>
-                <button class="details-link" type="button">Show Details</button>
-              </div>
-            </div>
-            <div class="treatment-right">
-              <div class="price-stack">
-                <span class="new-price">£20</span>
-                <span class="old-price">£25</span>
-              </div>
-              <a class="select-btn" href="https://treatwell.co.uk/place/skin-by-saif/" target="_blank" rel="noopener">Select</a>
-            </div>
+        <div class="service">
+          <div class="service-image">
+            <img src="IMG_4097.jpeg" alt="Dermaplaning at Skin by Saif Clinic">
           </div>
-          <div class="treatment-details">
+          <div class="service-top">
+            <h3>Dermaplaning</h3>
+          </div>
+          <div class="price-block">
+            <span class="old-price">£25</span>
+            <div class="pill">£20</div>
+          </div>
+          <p>
+            A professional exfoliating treatment that removes dead skin build-up and peach fuzz.
+          </p>
+          <div class="service-details">
             <p>A professional exfoliating treatment that removes dead skin build-up and peach fuzz for a smoother, brighter finish. Includes cleanse, skin preparation, dermaplaning and hydrating finishing products.</p>
           </div>
-        </div>
-
-        <div class="treatment-item">
-          <div class="treatment-row">
-            <div class="treatment-info">
-              <h4 class="treatment-name">Dermatological Skin Assessment - New Customer (First Assessment)</h4>
-              <div class="treatment-meta">
-                <span>45 mins</span>
-                <button class="details-link" type="button">Show Details</button>
+          <div class="service-actions">
+            <div class="price-book">
+              <div class="meta">
+                <span>15 mins</span>
+                <span>Instant smooth finish</span>
               </div>
             </div>
-            <div class="treatment-right">
-              <div class="price-stack">
-                <span class="new-price">£35</span>
-                <span class="old-price">£45</span>
-              </div>
-              <a class="select-btn" href="https://treatwell.co.uk/place/skin-by-saif/" target="_blank" rel="noopener">Select</a>
+            <div class="service-links">
+              <button class="show-details" type="button">Show Details</button>
+              <a class="book-inline" href="https://treatwell.co.uk/place/skin-by-saif/" target="_blank" rel="noopener">Book now</a>
             </div>
           </div>
-          <div class="treatment-details">
+        </div>
+
+        <div class="service">
+          <div class="service-image">
+            <img src="IMG_4098.jpeg" alt="Free pre-treatment consultation at Skin by Saif Clinic">
+          </div>
+          <div class="service-top">
+            <h3>Free Pre-Treatment Consultation</h3>
+          </div>
+          <div class="price-block">
+            <span class="old-price">£20</span>
+            <div class="pill">£0</div>
+          </div>
+          <p>
+            A quick consultation for clients who want help choosing the right facial or treatment before booking.
+          </p>
+          <div class="service-details">
+            <p>A quick consultation for clients who want help choosing the right facial or treatment before booking. Ideal if you are unsure where to start and want guidance on suitability, next steps and what may work best for your skin.</p>
+          </div>
+          <div class="service-actions">
+            <div class="price-book">
+              <div class="meta">
+                <span>15 mins</span>
+                <span>Suitability / Treatment guidance</span>
+              </div>
+            </div>
+            <div class="service-links">
+              <button class="show-details" type="button">Show Details</button>
+              <a class="book-inline" href="https://treatwell.co.uk/place/skin-by-saif/" target="_blank" rel="noopener">Book now</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="service">
+          <div class="service-image">
+            <img src="IMG_4099.jpeg" alt="New client skin assessment at Skin by Saif Clinic">
+          </div>
+          <div class="service-top">
+            <h3>Dermatological Skin Assessment – New Customer</h3>
+          </div>
+          <div class="price-block">
+            <span class="old-price">£45</span>
+            <div class="pill">£35</div>
+          </div>
+          <p>
+            A detailed initial consultation to review your skin concerns, treatment suitability, routine and next steps.
+          </p>
+          <div class="service-details">
             <p>A detailed initial consultation to review your skin concerns, treatment suitability, current routine and next steps. Includes personalised recommendations and guidance on the treatments or skincare options best suited to your goals.</p>
           </div>
-        </div>
-
-        <div class="treatment-item">
-          <div class="treatment-row">
-            <div class="treatment-info">
-              <h4 class="treatment-name">Dermatological Skin Assessment - Return Visit</h4>
-              <div class="treatment-meta">
+          <div class="service-actions">
+            <div class="price-book">
+              <div class="meta">
                 <span>45 mins</span>
-                <button class="details-link" type="button">Show Details</button>
+                <span>First Assessment</span>
               </div>
             </div>
-            <div class="treatment-right">
-              <div class="price-stack">
-                <span class="new-price">£30</span>
-                <span class="old-price">£37.50</span>
-              </div>
-              <a class="select-btn" href="https://treatwell.co.uk/place/skin-by-saif/" target="_blank" rel="noopener">Select</a>
+            <div class="service-links">
+              <button class="show-details" type="button">Show Details</button>
+              <a class="book-inline" href="https://treatwell.co.uk/place/skin-by-saif/" target="_blank" rel="noopener">Book now</a>
             </div>
           </div>
-          <div class="treatment-details">
+        </div>
+
+        <div class="service">
+          <div class="service-image">
+            <img src="IMG_4100.jpeg" alt="Return skin assessment at Skin by Saif Clinic">
+          </div>
+          <div class="service-top">
+            <h3>Dermatological Skin Assessment – Return Visit</h3>
+          </div>
+          <div class="price-block">
+            <span class="old-price">£37.50</span>
+            <div class="pill">£30</div>
+          </div>
+          <p>
+            A follow-up appointment to assess progress and refine your treatment plan where needed.
+          </p>
+          <div class="service-details">
             <p>A follow-up appointment to assess progress, review how your skin has been responding and refine your treatment plan or skincare approach where needed.</p>
           </div>
-        </div>
-
-        <div class="treatment-item">
-          <div class="treatment-row">
-            <div class="treatment-info">
-              <h4 class="treatment-name">Free Pre-Treatment Consultation</h4>
-              <div class="treatment-meta">
-                <span>15 mins</span>
-                <button class="details-link" type="button">Show Details</button>
+          <div class="service-actions">
+            <div class="price-book">
+              <div class="meta">
+                <span>45 mins</span>
+                <span>Ongoing support</span>
               </div>
             </div>
-            <div class="treatment-right">
-              <div class="price-stack">
-                <span class="new-price">£0</span>
-                <span class="old-price">£20</span>
-              </div>
-              <a class="select-btn" href="https://treatwell.co.uk/place/skin-by-saif/" target="_blank" rel="noopener">Select</a>
+            <div class="service-links">
+              <button class="show-details" type="button">Show Details</button>
+              <a class="book-inline" href="https://treatwell.co.uk/place/skin-by-saif/" target="_blank" rel="noopener">Book now</a>
             </div>
           </div>
-          <div class="treatment-details">
-            <p>A quick consultation for clients who want help choosing the right facial or treatment before booking. Ideal if you are unsure where to start and want guidance on suitability, next steps and what may work best for your skin.</p>
+        </div>
+
+        <div class="service">
+          <div class="service-image">
+            <img src="IMG_4102.jpeg" alt="Deep cleansing facial at Skin by Saif Clinic">
+          </div>
+          <div class="service-top">
+            <h3>Deep Cleansing Facial</h3>
+          </div>
+          <div class="price-block">
+            <span class="old-price">£60</span>
+            <div class="pill">£50</div>
+          </div>
+          <p>
+            Ideal for acne-prone, oily or congested skin and designed to leave skin cleaner and rebalanced.
+          </p>
+          <div class="service-details">
+            <p>Ideal for acne-prone, oily or congested skin. Includes cleanse, exfoliation, steam or softening prep where suitable, extractions, calming products and hydration to help rebalance the skin and leave it feeling cleaner and fresher.</p>
+          </div>
+          <div class="service-actions">
+            <div class="price-book">
+              <div class="meta">
+                <span>45 mins</span>
+                <span>Acne / Oily skin / Congestion</span>
+              </div>
+            </div>
+            <div class="service-links">
+              <button class="show-details" type="button">Show Details</button>
+              <a class="book-inline" href="https://treatwell.co.uk/place/skin-by-saif/" target="_blank" rel="noopener">Book now</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="service">
+          <div class="service-image">
+            <img src="IMG_4103.jpeg" alt="Express facial at Skin by Saif Clinic">
+          </div>
+          <div class="service-top">
+            <h3>Facial – Express</h3>
+          </div>
+          <div class="price-block">
+            <span class="old-price">£40</span>
+            <div class="pill">£30</div>
+          </div>
+          <p>
+            A shorter maintenance treatment designed to refresh and brighten the skin.
+          </p>
+          <div class="service-details">
+            <p>A shorter maintenance treatment designed to refresh and brighten the skin. Includes cleanse, light exfoliation, hydration and finishing products for an instant glow and a quick skin reset.</p>
+          </div>
+          <div class="service-actions">
+            <div class="price-book">
+              <div class="meta">
+                <span>30 mins</span>
+                <span>Maintenance / Glow / Hydration</span>
+              </div>
+            </div>
+            <div class="service-links">
+              <button class="show-details" type="button">Show Details</button>
+              <a class="book-inline" href="https://treatwell.co.uk/place/skin-by-saif/" target="_blank" rel="noopener">Book now</a>
+            </div>
           </div>
         </div>
 
@@ -2072,29 +2224,24 @@
       }
     }
 
-    const detailButtons = document.querySelectorAll('.details-link');
+    const detailButtons = document.querySelectorAll('.show-details');
 
     detailButtons.forEach(button => {
       button.addEventListener('click', () => {
-        const item = button.closest('.treatment-item');
-        const details = item.querySelector('.treatment-details');
+        const service = button.closest('.service');
+        const details = service.querySelector('.service-details');
         const isOpen = details.classList.contains('open');
 
-        document.querySelectorAll('.treatment-details.open').forEach(openDetails => {
+        document.querySelectorAll('.service-details.open').forEach(openDetails => {
           openDetails.classList.remove('open');
         });
 
-        document.querySelectorAll('.treatment-item.active').forEach(activeItem => {
-          activeItem.classList.remove('active');
-        });
-
-        document.querySelectorAll('.details-link').forEach(link => {
-          link.textContent = 'Show Details';
+        document.querySelectorAll('.show-details').forEach(btn => {
+          btn.textContent = 'Show Details';
         });
 
         if (!isOpen) {
           details.classList.add('open');
-          item.classList.add('active');
           button.textContent = 'Hide Details';
         }
       });
